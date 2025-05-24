@@ -4,7 +4,10 @@
     box-sizing: border-box;
 
 }
-
+:root {
+    scrollbar-gutter: stable; 
+    overflow-y: auto;       
+  }
 a:link {
     color: #000000;
 }
@@ -12,17 +15,15 @@ a:link {
 a:visited {
     color: rgb(0, 0, 0);
 }
-
-html,
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../image/1.jpg);
-    background-position: center center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(../image/2.jpg);
+    /* background-position: center center; */
     background-repeat: repeat;
     /* background-size: cover; */
-    background-color: #ffffff;
     background-attachment: fixed;
 }
+
 
 a {
     text-decoration: none;
@@ -43,9 +44,8 @@ a:visited {
     justify-content: start;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 0 3px #3471c0;
+    box-shadow: 0 0 3px rgba(98, 149, 215, 0.85);
     backdrop-filter: blur(3px);
-    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* 导航栏中的 log */
@@ -88,11 +88,6 @@ a:visited {
     border-radius: 8px;
 }
 
-/* 导航栏中的占位符 */
-.spacer {
-    display: none;
-}
-
 
 /* 版心的样式 */
 .container {
@@ -112,7 +107,7 @@ a:visited {
     border-radius: 15px;
 }
 
-/* 用户信息卡片，也会在多个页面中用到 */
+/* 用户卡片 */
 .card {
     border-radius: 20px;
     padding: 25px;
@@ -138,8 +133,8 @@ a:visited {
 
 .card .img img {
     width: 130%;
-    animation: spin-pause 8s linear infinite;
-    /* 总周期=旋转?秒+停顿?秒=?秒 */
+    animation: spin-pause 50s linear infinite;
+    /* 旋转一周 = 8s X 5% = 0.4s */
 }
 
 @keyframes spin-pause {
@@ -147,7 +142,7 @@ a:visited {
         transform: rotate(0deg);
     }
 
-    5% {
+    1% {
         transform: rotate(360deg);
     }
 
@@ -171,7 +166,7 @@ a:visited {
 .card .info {
     padding: 1px;
     margin: 5px 0;
-    background: linear-gradient(to right, #295e82, #295e82) no-repeat;
+    background: linear-gradient(to right, #757500, #1399cf) no-repeat;
     background-size: 0 2px;
     background-position: right bottom;
     transition: background-size 0.5s;
@@ -193,14 +188,16 @@ a:visited {
 
 .link span {
     display: block;
-    background-color: #c6c6c6;
+    background-color: #f0f0f0;
     margin: 5px;
     padding: 3px 8px;
     border-radius: 8px;
+    transition: background-color 0.3s;
+
 }
 
 .link span:hover {
-    background-color: #bdbdbd;
+    background-color: #e0e0e0;
 }
 
 /* 版心内容 */
@@ -211,10 +208,13 @@ a:visited {
 
 #right-column {
     flex: 2.5;
+    margin-top: 3px;
     min-width: 220px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    position: sticky;
+    top: 0; 
 }
 .article-list {
     margin-top: 5px;
@@ -229,15 +229,15 @@ a:visited {
     backdrop-filter: blur(3px);
 }
 .search-box {
-    margin: 5px 5px;
+    margin: 5px 7px;
 }
 
 
 #searchInput {
     width: 100%;
-    padding: 3px 0;
+    padding: 4px 0;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid rgba(0, 0, 0, 0.4);
     border-radius: 8px;
@@ -245,8 +245,8 @@ a:visited {
     background-image: url('../image/sh.png');
     background-repeat: no-repeat;
     background-position: 6px center;
-    padding-left: 37px;
-    background-size: 12%
+    padding-left: 28px;
+    background-size: 10%
 }
 #searchInput:focus {
     background-color: #ffffffd2;
@@ -275,7 +275,7 @@ a:visited {
 .tag:hover {
     background-color: #e0e0e0;
 }
-
+/* 文章卡片 */
 .article-card {
     background-color: rgba(247, 252, 252, 0.658);
     border: 1px solid #eee;
