@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,14 @@
     <link rel="stylesheet" media="screen and (min-width: 600px)" href="css/c1.css">
     <link rel="stylesheet" media="screen and (max-width: 699px)" href="css/c2.css">
 </head>
+
 <body>
     <!-- 导航栏 -->
     <div class="nav">
         <img src="image/head.jpg" alt="">
-        <div class="name"><h2>ikun</h2></div>
+        <div class="name">
+            <h2>ikun</h2>
+        </div>
         <div class="title">
             <h2 class="title-2"><a href="/">主页</a></h2>
             <h2 class="title-1"><a href="about.html">关于</a></h2>
@@ -21,18 +25,53 @@
     </div>
     <!-- 版心 -->
     <div class="container">
-        <div class="container-list">
-            <style>
-                .img1{border: 2px solid #2621218c;
-                      border-radius: 8px;margin: 60px ;overflow: hidden;}
-                .txt{margin: 20px auto; text-align: center;background: #e5d8d8bb;
-                     width: fit-content;padding: 8px 15px;border-radius: 10px;
-                     box-shadow: 0 0 5px #e2c8c8;}
-                img {display: block;}
-            </style>
-           <div class="img1"><img src="image/about.jpg" width="100%" object-fit="cover" ></div>
-           <div class="txt"><h1>巅峰时产生虚伪的拥护<br>黄昏时见证真正的信徒</h1></div>
+        <style>
+            .container { display:block}
+            .artplayer-app {
+                margin:  0 auto;
+                margin-top: 80px;
+                overflow: hidden;
+                width: 80%;
+                aspect-ratio: 16 / 9;
+                ;
+                border-radius: 8px;
+            }
+
+            .txt {
+                margin: 20px auto;
+                text-align: center;
+                background: #e5d8d8bb;
+                width: fit-content;
+                padding: 8px 15px;
+                border-radius: 10px;
+                box-shadow: 0 0 3px #e2c8c8;
+            }
+
+            div img {
+                display: block;
+            }
+        </style>
+        <div class="artplayer-app"></div>
+        <script src="css/artplayer.js"></script>
+        <script>
+            const art = new Artplayer({
+                container: '.artplayer-app',
+                url: `https://al.855955.xyz/d/123/rr/kkc.mp4?sign=09YKHE_2thxNlwKSsXbgIF-Gv_-MSW9JahKXfB-iSFE=:0`,
+                poster: 'https://al.855955.xyz/d/123/rr/kkc.jpg?sign=gKyyzemKxCzMXWvG7ExRtDe3lBIzQueNr1UxWr732PQ=:0',
+                loop: true,
+                theme: '#14b0f8',
+                pip: true, //画中画 的开关按钮
+                fullscreen: true, //窗口全屏
+                miniProgressBar: true, //迷你进度条
+            });
+        </script>
+        <div class="txt">
+            <h1>巅峰时产生虚伪的拥护<br>黄昏时见证真正的信徒</h1>
         </div>
     </div>
+
+
+    </div>
 </body>
+
 </html>
