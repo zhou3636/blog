@@ -1,1 +1,1 @@
-blog
+npm run build
