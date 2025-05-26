@@ -8,7 +8,9 @@
   <!-- <base target="_blank"> -->
   <link rel="stylesheet" media="screen and (min-width: 600px)" href="css/c1.css">
   <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/c2.css">
+  <link rel="stylesheet" href="css/timeline.css">
 </head>
+
 <body>
   <!-- 导航栏 -->
   <div class="nav">
@@ -17,39 +19,39 @@
       <h2>MyBlog</h2>
     </div>
     <div class="title">
-      <h2 class="title-1"><a href="/">主页</a></h2>
-      <h2 class="title-2"><a href="timeline.html">时间轴</a></h2>
-      <h2 class="title-2"><a href="about.html" >关于</a></h2>
+      <h2 class="title-2"><a href="/">主页</a></h2>
+      <h2 class="title-1"><a href="timeline.html">时间轴</a></h2>
+      <h2 class="title-2"><a href="about.html">关于</a></h2>
     </div>
   </div>
   <!-- 版心 -->
   <div class="container">
-    <div id="left-column" class="article-list"></div>
-
+    <div class="left">
+      <div class="timeline" id="timeline-container">
+        <div id="loading" style="padding: 20px; color: #666;">正在加载...</div>
+        <div id="error" style="display: none; padding: 20px; color: #dc3545;"></div>
+      </div>
+    </div>
     <div id="right-column">
       <div class="card">
         <!-- 用户的头像 -->
         <div class="img">
-          <img src="https://al.855955.xyz/d/123/rr/nxd-2.png?sign=sh9yn7gKe3BEWEKEoSVfQq2eYFkl6ctC1y8x4Nb1zHo=:0" alt="">
+          <img src="https://al.855955.xyz/d/123/rr/nxd-2.png?sign=sh9yn7gKe3BEWEKEoSVfQq2eYFkl6ctC1y8x4Nb1zHo=:0"
+            alt="">
         </div>
         <!-- 用户名 -->
-         <h2>食不食油饼</h2>
+        <h2>食不食油饼</h2>
         <span class="info">&emsp;小黑子们大家好！我是一个练习一坤的个人练习生，喜欢唱跳rap篮球。</span>
         <div class="link">
           <span><a href="https://www.github.com/" target="_blank">GitHub</a></span>
           <span><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></span>
         </div>
       </div>
-      <div class="tags">
-        <div class="search-box">
-          <input type="text" id="searchInput" placeholder="搜索本页...">
-        </div>
-        <div class="tags-container" id="tagsContainer">
-        </div>
-      </div>
+      <!-- <div class="tags"></div> -->
     </div>
+  </div>
 
-    <script src="css/list.js"></script>
+  <script src="css/timeline.js"></script>
 
 </body>
 

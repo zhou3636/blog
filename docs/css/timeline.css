@@ -1,0 +1,106 @@
+/* 时间线样式 */
+.left{
+    flex: 7.5;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+}
+.timeline {
+    position: relative;
+    padding-left: 50px;
+    margin: 40px;
+    /* padding: 70px; */
+
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: -10px;
+    bottom: -10px;
+    width: 3px;
+    background: #4486de;
+}
+
+/* 年份节点 */
+.year-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.year-group h2 {
+    position: relative;
+    margin-left: -15px;
+    padding: 5px 10px;
+    color: #242424;
+    background: #f8fdff;
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid #00000011;
+}
+
+
+
+/* 条目样式 */
+.timeline-item {
+    /* width: 40%; */
+    width: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    margin: 15px 0;
+    padding: 5px 10px;
+    /* background: #deeeff; */
+    /* border-radius: 8px; */
+    transition: transform 0.2s;
+    border-bottom: 1px solid #00000022;
+}
+
+.timeline-date {
+    width: 100px;
+    color: #111;
+    font-size: 16px;
+    /* border: 1px solid #00000022; */
+    
+}
+
+
+.timeline-title {
+    /* width: 100%; */
+    /* min-width: 100px; */
+    padding: 0 20px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    /* border: 1px solid #00000022; */
+}
+.timeline-date::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    background: white;
+    border: 3px solid #4486de;
+    border-radius: 50%;
+}
+.year-group h2::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 17px;
+    background: white;
+    border: 3px solid #4486de;
+    border-radius: 50%;
+}

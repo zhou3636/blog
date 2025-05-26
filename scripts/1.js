@@ -12,7 +12,7 @@ function parseMdFile(filePath) {
         const lines = content.split('\n').map(line => line.trim());
         
         // 提取前三个有效行
-        const [title, description, tagsLine] = lines.filter(l => l).slice(0, 3);
+        const [title, description, tagsLine,date] = lines.filter(l => l).slice(0, 4);
         
         // 解析标签（支持 #标签1#标签2 和 #标签1 #标签2 格式）
         const tags = tagsLine?.replace(/^#+/g, '')  // 去除行首的#
@@ -24,7 +24,8 @@ function parseMdFile(filePath) {
             file: path.basename(filePath),
             title: title || '无标题',
             description: description || '无描述',
-            tags: Array.from(new Set(tags)) // 去重
+            tags: Array.from(new Set(tags)),// 去重
+            date: date || '2020-01-01'
         };
     } catch (error) {
         console.error(`解析文件失败: ${filePath}`, error);
