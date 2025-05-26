@@ -69,14 +69,14 @@ a:visited {
 }
 
 .title-1 {
-    padding: 4px 3px;
+    padding: 4px 0;
     background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
     background-size: 100% 2px;
     background-position: center bottom;
 }
 
 .title-2 {
-    padding: 4px 3px;
+    padding: 4px 0;
     background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
     background-size: 0 2px;
     background-position: center bottom;
