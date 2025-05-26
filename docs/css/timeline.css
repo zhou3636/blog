@@ -1,6 +1,6 @@
 /* 时间线样式 */
 .left{
-    flex: 7.5;
+    width: 100%;
     border-radius: 10px;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.6);
@@ -16,16 +16,6 @@
 
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 18px;
-    top: -10px;
-    bottom: -10px;
-    width: 3px;
-    background: #4486de;
-}
-
 /* 年份节点 */
 .year-group {
     position: relative;
@@ -35,72 +25,82 @@
 .year-group h2 {
     position: relative;
     margin-left: -15px;
-    padding: 5px 10px;
+    padding: 0px 10px;
     color: #242424;
     background: #f8fdff;
     display: inline-block;
     border-radius: 8px;
-    border: 1px solid #00000011;
+    border: 1px solid rgba(68, 135, 222, 0.8);
 }
 
 
 
 /* 条目样式 */
 .timeline-item {
-    /* width: 40%; */
     width: fit-content;
     display: flex;
     justify-content: start;
     align-items: center;
     position: relative;
     margin: 15px 0;
-    padding: 5px 10px;
-    /* background: #deeeff; */
-    /* border-radius: 8px; */
+    padding: 3px 5px;
     transition: transform 0.2s;
-    border-bottom: 1px solid #00000022;
+    border-bottom: 1px solid #00000018;
+    background: linear-gradient(to right, #4487de, #4487de) no-repeat;
+    background-size: 0 2px;
+    background-position: center bottom;
+    transition: background-size 0.2s;
 }
-
+.timeline-item:hover{
+    background: linear-gradient(to right, #4487de, #4487de) no-repeat;
+    background-size: 100% 2px;
+    background-position: center bottom;
+}
 .timeline-date {
     width: 100px;
     color: #111;
-    font-size: 16px;
-    /* border: 1px solid #00000022; */
-    
+    font-size: 16px;    
 }
 
 
 .timeline-title {
-    /* width: 100%; */
-    /* min-width: 100px; */
-    padding: 0 20px;
     color: #2c3e50;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
-    /* border: 1px solid #00000022; */
+    padding-right: 5px;
 }
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: -10px;
+    bottom: -10px;
+    width: 3px;
+    background: rgb(68, 134, 222);
+}
+
 .timeline-date::before {
     content: '';
     position: absolute;
-    left: -38px;
+    left: -36px;
     top: 50%;
     transform: translateY(-50%);
-    width: 9px;
-    height: 9px;
+    width: 5px;
+    height: 5px;
     background: white;
-    border: 3px solid #4486de;
+    border: 3px solid rgb(68, 134, 222);
     border-radius: 50%;
 }
 .year-group h2::before {
     content: '';
     position: absolute;
-    left: -28px;
+    left: -24px;
     top: 50%;
     transform: translateY(-50%);
-    width: 17px;
-    height: 17px;
+    width: 9px;
+    height: 9px;
     background: white;
-    border: 3px solid #4486de;
+    border: 3px solid rgb(68, 134, 222);
     border-radius: 50%;
 }

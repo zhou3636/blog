@@ -69,16 +69,23 @@ a:visited {
 }
 
 .title-1 {
-    padding: 6px 20px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.15);
+    padding: 4px 3px;
+    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
+    background-size: 100% 2px;
+    background-position: center bottom;
 }
 
 .title-2 {
-    padding: 5px 20px;
-    border-radius: 8px;
+    padding: 4px 3px;
+    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
+    background-size: 0 2px;
+    background-position: center bottom;
+    transition: background-size 0.2s;
 }
-
+.title-2:hover{
+    background-size: 100% 2px;
+    background-position: center bottom;
+}
 
 /* 版心的样式 */
 .container {
@@ -97,114 +104,16 @@ a:visited {
     border-radius: 5px;
 }
 
-/* 用户卡片 */
-.card {
-    border-radius: 20px;
-    padding: 25px;
-    padding-bottom: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(3px);
 
-}
-
-/* 用户头像 */
-.card .img {
-    margin: 0 auto;
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.card .img img {
-    width: 105%;
-    /* animation: spin-pause 50s linear infinite; */
-    /* 旋转一周 = 8s X 5% = 0.4s */
-}
-
-/* @keyframes spin-pause {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    1% {
-        transform: rotate(360deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-} */
-
-/* 用户名 */
-.card h2 {
-    padding: 2px 3px;
-    text-align: center;
-    width: fit-content;
-    margin: auto;
-    margin: 5px auto;
-    background: linear-gradient(to right, #ad27a2, #cf1352) no-repeat;
-    background-size: 0 2px;
-    background-position: right bottom;
-    transition: background-size 0.2s;
-}
-.card h2:hover {
-    background-size: 100% 2px;
-    background-position: center bottom;
-}
-/* 个人介绍 */
-.card .info {
-    padding: 1px;
-    margin: 5px 0;
-    background: linear-gradient(to right, #757500, #1399cf) no-repeat;
-    background-size: 0 2px;
-    background-position: center bottom;
-    transition: background-size 0.5s;
-}
-
-.card .info:hover {
-    background-size: 100% 2px;
-    background-position: left bottom;
-}
-
-/* 头像下面的链接 */
-.link {
-    display: flex;
-    align-items: center;
-    margin: 5px auto;
-    justify-content: center;
-    align-items: center;
-}
-
-.link span {
-    display: block;
-    background-color: #f0f0f0;
-    margin: 5px;
-    padding: 3px 8px;
-    border-radius: 13px;
-    transition: background-color 0.3s;
-
-}
-
-.link span:hover {
-    background-color: #e0e0e0;
-}
 
 /* 版心内容 */
 
 #left-column {
-    flex: 7.5;
+    width: 100%;
 }
 
 #right-column {
-    flex: 2.5;
-    min-width: 200px;
-    max-width: 230px;
+    width: 220px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -319,6 +228,103 @@ a:visited {
     padding: 3px 8px;
     border-radius: 12px;
     font-size: 12px;
+}
+/* 用户卡片 */
+.card {
+    border-radius: 20px;
+    padding: 25px;
+    padding-bottom: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(3px);
+
+}
+
+/* 用户头像 */
+.card .img-box {
+    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.card .img-box img {
+    width: 105%;
+    /* animation: spin-pause 50s linear infinite; */
+    /* 旋转一周 = 8s X 5% = 0.4s */
+}
+
+/* @keyframes spin-pause {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    1% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+/* 用户名 */
+.card h2 {
+    padding: 2px 3px;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    margin: 5px auto;
+    background: linear-gradient(to right, #ad27a2, #cf1352) no-repeat;
+    background-size: 0 2px;
+    background-position: center bottom;
+    transition: background-size 0.2s;
+}
+.card h2:hover {
+    background-size: 100% 2px;
+    background-position: center bottom;
+}
+/* 个人介绍 */
+.card .info {
+    padding: 1px;
+    margin: 5px 0;
+    background: linear-gradient(to right, #757500, #1399cf) no-repeat;
+    background-size: 0 2px;
+    background-position: right bottom;
+    transition: background-size 0.5s;
+}
+
+.card .info:hover {
+    background-size: 100% 2px;
+    background-position: left bottom;
+}
+
+/* 头像下面的链接 */
+.link {
+    display: flex;
+    align-items: center;
+    margin: 5px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.link span {
+    display: block;
+    background-color: #f0f0f0;
+    margin: 5px;
+    padding: 3px 8px;
+    border-radius: 13px;
+    transition: background-color 0.3s;
+
+}
+
+.link span:hover {
+    background-color: #e0e0e0;
 }
 /* 其它信息 */
 .card,

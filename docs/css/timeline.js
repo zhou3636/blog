@@ -29,7 +29,7 @@ async function loadTimeline() {
                         ${grouped[year]
                             .sort((a, b) => new Date(b.date) - new Date(a.date))
                             .map(item => `
-                                <a href="view.html?file=${item.file}" class="timeline-item">
+                                <a href="view.html?file=${item.file}" target="_blank" class="timeline-item">
                                     <div class="timeline-date">${item.date.slice(5).replace('-', ' - ')}</div>
                                     <div class="timeline-title">${item.title}</div>
                                 </a>
