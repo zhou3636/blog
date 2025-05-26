@@ -45,7 +45,7 @@ a:visited {
     width: 50px;
     height: 50px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     border-radius: 50%;
     border: 1px solid #000000;
 }
@@ -84,7 +84,7 @@ a:visited {
 .container {
     width: 100%;
     max-width: 960px;
-    min-width: 768px;
+    min-width: 600px;
     min-height: calc(100vh - 104px);
     margin: 12px auto;
     display: flex;
@@ -251,19 +251,18 @@ a:visited {
 .tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
     margin-bottom: 10px;
     padding: 0 5px;    
 }
 
 .tag {
     background-color: #f0f0f0;
-    padding: 3px 8px;
-    border-radius: 15px;
+    padding: 1px 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 2px;
-    font-size: 15px;
+    margin: 3px;
+    font-size: 13px;
 
 }
 
@@ -285,16 +284,25 @@ a:visited {
 }
 
 .article-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .article-title {
+    width: fit-content;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    padding-bottom: 2px;
+    background: linear-gradient(to right, #ad27a2, #6bcf13) no-repeat;
+    background-size: 0 2px;
+    background-position: center bottom;
+    transition: background-size 0.2s;
 }
-
+.article-card:hover .article-title {
+    background-size: 100% 2px;
+    background-position: center bottom;
+}
 .article-description {
     color: #272727;
     margin-bottom: 10px;
