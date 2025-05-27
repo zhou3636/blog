@@ -2,7 +2,7 @@
     /* 用户卡片 */
     .card {
         border-radius: 20px;
-        padding: 25px;
+        padding: 16px;
         padding-bottom: 12px;
         border: 1px solid rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.6);
@@ -24,25 +24,15 @@
         border: 1px solid rgba(0, 0, 0, 0.4);
     }
 
-    .card .img-box img {
-        width: 105%;
-        /* animation: spin-pause 50s linear infinite; */
-        /* 旋转一周 = 8s X 5% = 0.4s */
-    }
+    .img-box img {
+        width: 102%;
+        position: relative;
+        transition: width 0.1s ease-out, transform 0.1s ease-out;    }
 
-    /* @keyframes spin-pause {
-    0% {
-        transform: rotate(0deg);
+    .img-box img:hover {
+        width: 110%;
+        transform: translate(0, 5px);
     }
-
-    1% {
-        transform: rotate(360deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-} */
 
     /* 用户名 */
     .card h2 {
@@ -89,8 +79,8 @@
 
     .link span {
         display: block;
-        background-color: #f0f0f0;
-        margin: 5px;
+        background-color: #e8f4ff;
+        margin: 3px 1px;
         padding: 3px 8px;
         border-radius: 13px;
         transition: background-color 0.3s;
@@ -99,13 +89,13 @@
     }
 
     .link span:hover {
-        background-color: #e0e0e0;
+        background-color: #d1e9ff;
     }
 </style>
 <div class="card">
     <!-- 用户的头像 -->
     <div class="img-box">
-        <img src="https://rr.855955.xyz/nxd/nxd-2.png" alt="">
+        <img src="https://rr.855955.xyz/nxd/nxd-3.png" alt="">
     </div>
     <!-- 用户名 -->
     <h2>食不食油饼</h2>

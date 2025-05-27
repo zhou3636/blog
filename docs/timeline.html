@@ -8,7 +8,7 @@
   <!-- <base target="_blank"> -->
   <link rel="stylesheet" media="screen and (min-width: 600px)" href="css/c1.css">
   <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/c2.css">
-  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/list2.css">
 </head>
 
 <body>
@@ -19,17 +19,19 @@
   <!-- 版心 -->
   <div class="container">
     <div id="right-column">
-      <div id="card"><script src="css/card.js"></script>
+      <div id="card"></div>
+      <script src="css/card.js"></script>
+      <div class="tags">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="搜索本页...">
+        </div>
+        <div class="tags-container" id="tagsContainer">
+        </div>
       </div>
     </div>
-    <div class="timeline" id="timeline-container">
-      <div id="loading"></div>
+    <div id="left-column" class="article-list">
     </div>
-    
-  </div>
-
-  <script src="css/timeline.js"></script>
-
+    <script src="css/list2.js"></script>
 </body>
 
 </html>

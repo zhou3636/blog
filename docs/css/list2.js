@@ -6,7 +6,7 @@ let currentTag = '';
 async function init() {
 
     try {
-        const response = await fetch('./md/mdlist.json');
+        const response = await fetch('./md/mdlist-2.json');
         if (!response.ok) throw new Error(`错误代码: ${response.status}`);
         articles = await response.json();
         renderTags();
@@ -20,18 +20,18 @@ function renderArticles() {
     const container = document.getElementById('left-column');
     const filtered = articles.filter(article => {
         const matchSearch = article.title.includes(currentSearch) || 
-                          article.description.includes(currentSearch);
+                        article.date.includes(currentSearch);
         const matchTag = !currentTag || article.tags.includes(currentTag);
         return matchSearch && matchTag;
     });
 
     container.innerHTML = filtered.map(article => `
-        <a href="view.html?file=${encodeURIComponent(article.file)}"  target="_blank" class="article-card">
-            <div class="article-title">${article.title}</div>
-            <div class="article-description">${article.description}</div>
-            <div class="article-tags">
+        <a href="view.html?file=${encodeURIComponent(article.file)}"  target="_blank" class="article-card-2">
+        <div class="article-date-2">${article.date}</div>
+        <div class="article-title-2">${article.title}</div>
+                        <div class="article-tags-2">
                 ${article.tags.map(tag => `
-                    <span class="article-tag">${tag}</span>
+                    <span class="article-tag-2">${tag}</span>
                 `).join('')}
             </div>
         </a>

@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "node scripts/1.js"
+    "build": "node scripts/1.js && node scripts/2.js"
   }
 }
