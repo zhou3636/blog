@@ -13,13 +13,21 @@
 <body>
   <!-- 导航栏 -->
   <div id="nav">
-    <script src="css/nav.js"></script>
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('nav').innerHTML = html);
+    </script>
   </div>
   <!-- 版心 -->
   <div class="container">
     <div id="right-column">
       <div id="card"></div>
-      <script src="css/card.js"></script>
+      <script>
+        fetch('card.html')
+          .then(response => response.text())
+          .then(html => document.getElementById('card').innerHTML = html);
+      </script>
       <div class="tags">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="搜索本页...">
