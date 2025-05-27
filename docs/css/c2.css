@@ -180,3 +180,6 @@ a:visited {
     border: 1px solid rgba(145, 145, 145, 0.3);
 
 }
+.cardimg {
+    display: none;
+ }
