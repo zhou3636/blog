@@ -17,53 +17,55 @@
     </div>
     <!-- 版心 -->
     <div class="container">
-        <style>
-            .container {
-                display: block
-            }
-
-            .artplayer-app {
-                margin: 0 auto;
-                margin-top: 80px;
-                overflow: hidden;
-                width: 80%;
-                aspect-ratio: 16 / 9;
-                ;
-                border-radius: 8px;
-            }
-
-            .txt {
-                margin: 20px auto;
-                text-align: center;
-                background: #f1ffedbb;
-                width: fit-content;
-                padding: 8px 15px;
-                border-radius: 10px;
-                box-shadow: 0 0 3px #f1ffedbb;
-            }
-
-            div img {
-                display: block;
-            }
-        </style>
-        <div class="artplayer-app"></div>
-        <script src="css/artplayer.js"></script>
-        <script>
-            const art = new Artplayer({
-                container: '.artplayer-app',
-                poster: 'image/n.jpg',
-                url: `https://al.855955.xyz/d/123/rr/naxida2.mp4?sign=dxKxpgPJweYVprRPUg7HsrY8mw826zbL5F_WDq7mbTI=:0`,
-                loop: true,
-                theme: '#14b0f8',
-                pip: true, //画中画 的开关按钮
-                fullscreen: true, //窗口全屏
-                miniProgressBar: true, //迷你进度条
-            });
-        </script>
-        <div class="txt">
-            <h2>白草净华 无垠无忧</h2>
+        <div id="right-column">
+            <div id="card"></div>
+            <script src="css/card.js"></script>
         </div>
-    </div>
+        <div id="left-column">
+            <style>
+                .artplayer-app {
+                    margin: 10px;
+                    margin-top: 15px;
+                    overflow: hidden;
+                    aspect-ratio: 16 / 9;
+                    ;
+                    border-radius: 8px;
+                }
+
+                .txt {
+                    margin: 20px auto;
+                    text-align: center;
+                    background: #f1ffedbb;
+                    width: fit-content;
+                    padding: 8px 15px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 3px #f1ffedbb;
+                }
+
+                div img {
+                    display: block;
+                }
+            </style>
+            <div class="artplayer-app"></div>
+            <script src="css/artplayer.js"></script>
+            <script>
+                const art = new Artplayer({
+                    container: '.artplayer-app',
+                    poster: 'image/n.jpg',
+                    url: `https://al.855955.xyz/d/123/rr/naxida2.mp4?sign=dxKxpgPJweYVprRPUg7HsrY8mw826zbL5F_WDq7mbTI=:0`,
+                    loop: true,
+                    theme: '#14b0f8',
+                    pip: true, //画中画 的开关按钮
+                    fullscreen: true, //窗口全屏
+                    miniProgressBar: true, //迷你进度条
+                });
+            </script>
+            <div class="txt">
+                <h2>白草净华 无垠无忧</h2>
+            </div>
+        </div>
+
+
 
 
     </div>
