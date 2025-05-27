@@ -13,37 +13,19 @@
 
 <body>
   <!-- 导航栏 -->
-  <div class="nav">
-    <img src="image/head.jpg" alt="">
-    <div class="name">
-      <h2>MyBlog</h2>
-    </div>
-    <div class="title">
-      <h2 class="title-2"><a href="/">主页</a></h2>
-      <h2 class="title-1"><a href="timeline.html">时间轴</a></h2>
-      <h2 class="title-2"><a href="about.html">关于</a></h2>
-    </div>
+  <div id="nav">
+    <script src="css/nav.js"></script>
   </div>
   <!-- 版心 -->
   <div class="container">
-    <div id="loading" style="padding: 20px; color: #666;">正在加载...</div>
-    <div id="error" style="display: none; padding: 20px; color: #dc3545;"></div>
-    <div class="timeline" id="timeline-container"></div>
     <div id="right-column">
-      <div class="card">
-        <!-- 用户的头像 -->
-        <div class="img-box">
-          <img src="https://rr.855955.xyz/nxd/nxd-2.png" alt="">
-        </div>
-        <!-- 用户名 -->
-        <h2>食不食油饼</h2>
-        <span class="info">&emsp;小黑子们大家好！我是一个练习一坤的个人练习生，喜欢唱跳rap篮球。</span>
-        <div class="link">
-          <span><a href="https://www.github.com/" target="_blank">GitHub</a></span>
-          <span><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></span>
-        </div>
+      <div id="card"><script src="css/card.js"></script>
       </div>
     </div>
+    <div class="timeline" id="timeline-container">
+      <div id="loading"></div>
+    </div>
+    
   </div>
 
   <script src="css/timeline.js"></script>

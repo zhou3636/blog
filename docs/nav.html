@@ -1,0 +1,71 @@
+<style>
+  /* 导航栏 */
+  .nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(68, 134, 222);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-shadow: 0 0 3px rgb(133, 133, 133);
+  }
+
+  /* 导航栏中的 log */
+  .nav img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+  }
+
+  /* 导航栏中的标题 */
+  .nav .title {
+    margin: auto;
+    /* 绝对居中 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 0 10px;
+  }
+
+  .nav .title a {
+    color: rgb(255, 255, 249);
+  }
+
+  .title-1 {
+    padding: 4px 0;
+    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
+    background-size: 100% 2px;
+    background-position: center bottom;
+  }
+
+  .title-2 {
+    padding: 4px 0;
+    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
+    background-size: 0 2px;
+    background-position: center bottom;
+    transition: background-size 0.2s;
+  }
+
+  .title-2:hover {
+    background-size: 100% 2px;
+    background-position: center bottom;
+  }
+</style>
+<div class="nav">
+  <img src="image/head.jpg" alt="">
+  <div class="name">
+    <h2>MyBlog</h2>
+  </div>
+  <div class="title">
+    <h2 class="title-2"><a href="/">主页</a></h2>
+    <h2 class="title-2"><a href="timeline.html">时间轴</a></h2>
+    <h2 class="title-2"><a href="about.html">关于</a></h2>
+  </div>
+</div>

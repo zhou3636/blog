@@ -1,17 +1,16 @@
 /* 时间线样式 */
 .timeline {
-    /* width: 100%; */
+    flex: 1;
     border-radius: 10px;
-    padding-left: 80px;
     position: relative;
     margin-left: 30px;
-
 }
 
 /* 年份节点 */
 .year-group {
     position: relative;
     margin: 20px 0;
+    margin-left: 80px;
 }
 
 .year-group h2 {
@@ -67,8 +66,8 @@
     content: '';
     position: absolute;
     left: 48px;
-    top: 10px;
-    bottom: 10px;
+    top: 15px;
+    bottom: 15px;
     width: 3px;
     background: rgb(68, 134, 222);
 }

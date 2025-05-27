@@ -2,7 +2,6 @@ async function loadTimeline() {
     const container = document.getElementById('timeline-container');
     const loading = document.getElementById('loading');
     const errorDiv = document.getElementById('error');
-    const tl = document.getElementById('timeline-container');
     try {
         // 加载JSON数据
         const response = await fetch('md/mdlist.json');
@@ -42,7 +41,6 @@ async function loadTimeline() {
 
     } catch (error) {
         loading.style.display = 'none';
-        tl.style.display = 'none';
         errorDiv.style.display = 'block';
         errorDiv.innerHTML = `
             加载失败：${error.message}<br>

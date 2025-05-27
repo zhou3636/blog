@@ -29,63 +29,6 @@ a:visited {
     color: rgb(0, 0, 0);
 }
 
-/* 导航栏 */
-.nav {
-    width: 100%;
-    height: 70px;
-    background-color: rgb(68, 134, 222);
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    box-shadow: 0 0 3px rgb(133, 133, 133);
-}
-
-/* 导航栏中的 log */
-.nav img {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    margin-right: 5px;
-    border-radius: 50%;
-    border: 1px solid #000000;
-}
-
-/* 导航栏中的标题 */
-.nav .title {
-    margin: auto;
-    /* 绝对居中 */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 0 10px;
-}
-
-.nav .title a {
-    color: rgb(255, 255, 249);
-}
-
-.title-1 {
-    padding: 4px 0;
-    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
-    background-size: 100% 2px;
-    background-position: center bottom;
-}
-
-.title-2 {
-    padding: 4px 0;
-    background: linear-gradient(to right, #f8d8ff, #f8d8ff) no-repeat;
-    background-size: 0 2px;
-    background-position: center bottom;
-    transition: background-size 0.2s;
-}
-.title-2:hover{
-    background-size: 100% 2px;
-    background-position: center bottom;
-}
 
 /* 版心的样式 */
 .container {
@@ -109,19 +52,17 @@ a:visited {
 /* 版心内容 */
 
 #left-column {
-    width: 100%;
+    flex: 1
 }
 
 #right-column {
     width: 220px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
     position: sticky;
     top: 0; 
-}
-.article-list {
-    margin-top: 0;
 }
 /* 搜索和标签 */
 .tags {
@@ -229,108 +170,5 @@ a:visited {
     border-radius: 12px;
     font-size: 12px;
 }
-/* 用户卡片 */
-.card {
-    border-radius: 20px;
-    padding: 25px;
-    padding-bottom: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(3px);
 
-}
-
-/* 用户头像 */
-.card .img-box {
-    margin: 0 auto;
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.card .img-box img {
-    width: 105%;
-    /* animation: spin-pause 50s linear infinite; */
-    /* 旋转一周 = 8s X 5% = 0.4s */
-}
-
-/* @keyframes spin-pause {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    1% {
-        transform: rotate(360deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-} */
-
-/* 用户名 */
-.card h2 {
-    padding: 2px 3px;
-    text-align: center;
-    width: fit-content;
-    margin: auto;
-    margin: 5px auto;
-    background: linear-gradient(to right, #ad27a2, #cf1352) no-repeat;
-    background-size: 0 2px;
-    background-position: center bottom;
-    transition: background-size 0.2s;
-}
-.card h2:hover {
-    background-size: 100% 2px;
-    background-position: center bottom;
-}
-/* 个人介绍 */
-.card .info {
-    padding: 1px;
-    margin: 5px 0;
-    background: linear-gradient(to right, #757500, #1399cf) no-repeat;
-    background-size: 0 2px;
-    background-position: right bottom;
-    transition: background-size 0.5s;
-}
-
-.card .info:hover {
-    background-size: 100% 2px;
-    background-position: left bottom;
-}
-
-/* 头像下面的链接 */
-.link {
-    display: flex;
-    align-items: center;
-    margin: 5px auto;
-    justify-content: center;
-    align-items: center;
-}
-
-.link span {
-    display: block;
-    background-color: #f0f0f0;
-    margin: 5px;
-    padding: 3px 8px;
-    border-radius: 13px;
-    transition: background-color 0.3s;
-
-}
-
-.link span:hover {
-    background-color: #e0e0e0;
-}
 /* 其它信息 */
-.card,
-.tags {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 3px rgba(208, 208, 208, 0.5);
-}

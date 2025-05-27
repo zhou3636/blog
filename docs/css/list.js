@@ -5,9 +5,6 @@ let currentTag = '';
 // 加载数据并初始化页面
 async function init() {
 
-    const loading = document.getElementById('loading');
-    const errorDiv = document.getElementById('error');
-
     try {
         const response = await fetch('./md/mdlist.json');
         if (!response.ok) throw new Error(`错误代码: ${response.status}`);
@@ -15,12 +12,6 @@ async function init() {
         renderTags();
         renderArticles();
     } catch (error) {
-        loading.style.display = 'none';
-        errorDiv.style.display = 'block';
-        errorDiv.innerHTML = `
-            加载失败：${error.message}<br>
-            请检查：1. JSON文件路径 2. 本地服务器 3. 控制台错误
-        `;
         console.error('加载数据失败:',error.message);
     }
 }
@@ -59,7 +50,6 @@ function renderTags() {
         `)
     ].join('');
 }
-loading.style.display = 'none';
 // 事件监听
 document.getElementById('searchInput').addEventListener('input', (e) => {
     currentSearch = e.target.value;

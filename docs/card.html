@@ -1,0 +1,117 @@
+<style>
+    /* 用户卡片 */
+    .card {
+        border-radius: 20px;
+        padding: 25px;
+        padding-bottom: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(3px);
+        box-shadow: 0 0 3px rgba(208, 208, 208, 0.5);
+
+    }
+
+    /* 用户头像 */
+    .card .img-box {
+        margin: 0 auto;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+
+    .card .img-box img {
+        width: 105%;
+        /* animation: spin-pause 50s linear infinite; */
+        /* 旋转一周 = 8s X 5% = 0.4s */
+    }
+
+    /* @keyframes spin-pause {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    1% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+    /* 用户名 */
+    .card h2 {
+        padding: 2px 3px;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+        margin: 5px auto;
+        background: linear-gradient(to right, #ad27a2, #cf1352) no-repeat;
+        background-size: 0 2px;
+        background-position: center bottom;
+        transition: background-size 0.2s;
+    }
+
+    .card h2:hover {
+        background-size: 100% 2px;
+        background-position: center bottom;
+    }
+
+    /* 个人介绍 */
+    .card .info {
+        padding: 1px;
+        margin: 5px 0;
+        background: linear-gradient(to right, #757500, #1399cf) no-repeat;
+        background-size: 0 2px;
+        background-position: right bottom;
+        transition: background-size 0.5s;
+    }
+
+    .card .info:hover {
+        background-size: 100% 2px;
+        background-position: left bottom;
+    }
+
+    /* 头像下面的链接 */
+    .link {
+        display: flex;
+        align-items: center;
+        margin: 5px auto;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .link span {
+        display: block;
+        background-color: #f0f0f0;
+        margin: 5px;
+        padding: 3px 8px;
+        border-radius: 13px;
+        transition: background-color 0.3s;
+        font-size: 13px;
+
+    }
+
+    .link span:hover {
+        background-color: #e0e0e0;
+    }
+</style>
+<div class="card">
+    <!-- 用户的头像 -->
+    <div class="img-box">
+        <img src="https://rr.855955.xyz/nxd/nxd-2.png" alt="">
+    </div>
+    <!-- 用户名 -->
+    <h2>食不食油饼</h2>
+    <span class="info">&emsp;小黑子们大家好！我是一个练习一坤的个人练习生，喜欢唱跳rap篮球。</span>
+    <div class="link">
+        <span><a href="https://www.github.com/" target="_blank">GitHub</a></span>
+        <span><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></span>
+    </div>
+</div>
