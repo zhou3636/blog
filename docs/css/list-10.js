@@ -75,7 +75,7 @@ document.getElementById('tagsContainer').addEventListener('click', (e) => {
     if (e.target.classList.contains('tag')) {
         currentTag = e.target.dataset.tag;
         document.querySelectorAll('#tagsContainer .tag').forEach(tag => {
-            tag.style.backgroundColor = tag === e.target ? '#d1e9ff' : '#e8f4ffcc';
+            tag.style.backgroundColor = tag === e.target ? '#d1e9ff' : '#ffffff88';
         });
         renderArticles();
     }
