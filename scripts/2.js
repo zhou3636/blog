@@ -3,7 +3,7 @@ const path = require('path');
 
 // 配置文件路径
 const MD_DIR = path.join(__dirname, '../docs/md');   // 文件存放目录
-const OUTPUT_FILE = path.join(MD_DIR, 'mdlist-2.json'); // 输出文件路径
+const OUTPUT_FILE = path.join(MD_DIR, 'mdlist2.json'); // 输出文件路径
 
 // 解析.md文件内容
 function parseMdFile(filePath) {
@@ -12,7 +12,7 @@ function parseMdFile(filePath) {
         const lines = content.split('\n').map(line => line.trim());
         
         // 提取前三个有效行
-        const [title, description, tagsLine,date] = lines.filter(l => l).slice(0, 4);
+        const [title, description, tagsLine,img,date] = lines.filter(l => l).slice(0, 5);
         
         // 解析标签（支持 #标签1#标签2 和 #标签1 #标签2 格式）
         const tags = tagsLine?.replace(/^#+/g, '')  // 去除行首的#
@@ -25,6 +25,7 @@ function parseMdFile(filePath) {
             title: title || '无标题',
             description: description || '无描述',
             tags: Array.from(new Set(tags)),// 去重
+            img: img || 'kk.img',
             date: date || '2020-01-01'
         };
     } catch (error) {
@@ -44,8 +45,7 @@ function generateMdList() {
         // 解析所有文件
         const result = files
             .map(parseMdFile)
-            .filter(Boolean)
-            .sort((a, b) => b.date.localeCompare(a.date)); // 新增排序
+            .filter(Boolean); // 过滤解析失败的文件
         
         // 写入JSON文件
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));

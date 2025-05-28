@@ -3,7 +3,7 @@ const path = require('path');
 
 // 配置文件路径
 const MD_DIR = path.join(__dirname, '../docs/md');   // 文件存放目录
-const OUTPUT_FILE = path.join(MD_DIR, 'mdlist.json'); // 输出文件路径
+const OUTPUT_FILE = path.join(MD_DIR, 'mdlist2.json'); // 输出文件路径
 
 // 解析.md文件内容
 function parseMdFile(filePath) {

@@ -132,6 +132,8 @@ a:visited {
     color: inherit;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     display: flex;
+    align-items: stretch;
+    min-width: 420px;
 }
 
 .article-card:hover {
@@ -141,10 +143,18 @@ a:visited {
 .incard {
     flex: 1;
 }
+.imgbox {
+    max-width: 220px;
+    max-height: 200px;
+    border-radius: 3px;
+    overflow: hidden;
+    /* border: 1px solid #959595; */
+}
 .cardimg {
-    border-radius: 6px;
-    height: 87px;
-    width: 100px;
+    width: 102%;        
+    height: 102%;       
+    object-fit: cover;   /* 关键属性：控制图片适应方式 */
+    display: block;      /* 消除图片底部间隙 */
  }
 .article-title {
     width: fit-content;
