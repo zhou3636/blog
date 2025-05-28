@@ -32,7 +32,7 @@ function parseMdFile(filePath) {
             title: titleLine || '标题?',
             description: descriptionLine || '描述?',
             tags: Array.from(new Set(tags)), // 去重
-            img: imgLine || 'kk.jpg',        // 空行时使用默认图
+            img: imgLine || 'md/kk.jpg',        // 空行时使用默认图
             date: dateLine || '2020-01-01'   // 空行时使用默认日期
         };
     } catch (error) {

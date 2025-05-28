@@ -143,15 +143,14 @@ a:visited {
 }
 .incard {
     flex: 1;
-    min-height: 125px;
 }
 .imgbox {
-    max-width: 240px;
-    max-height: 180px;
+    max-width: 260px;
+    max-height: 130px;
     border-radius: 5px;
     overflow: hidden;
-    /* border: 1px solid #959595; */
-}
+    object-fit: cover;   
+    display: block;}
 .cardimg {
     height: 100%;       
     object-fit: cover;   /* 关键属性：控制图片适应方式 */

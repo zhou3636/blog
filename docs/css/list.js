@@ -32,7 +32,7 @@ function renderArticles() {
           <div class="article-description">${article.description}</div>
           <div class="article-tags">${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}</div>
         </div>
-        <img class="cardimg" src="image/kk.jpg" alt="">
+        <img class="imgbox" src="${article.img}" alt="">
     </a>
     `).join('');
 }
