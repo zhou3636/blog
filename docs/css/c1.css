@@ -145,8 +145,8 @@ a:visited {
     flex: 1;
 }
 .imgbox {
-    max-width: 260px;
-    max-height: 130px;
+    height: 120px;
+    max-width: 160px;
     border-radius: 5px;
     overflow: hidden;
     object-fit: cover;   
@@ -174,7 +174,7 @@ a:visited {
 }
 .article-description {
     color: #272727;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     line-height: 1.5;
     margin-left: 8px;
 }
