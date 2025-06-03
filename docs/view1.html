@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面详情</title>
+  <base target="_blank">
+  <script src="css/md.js"></script>
+  <link rel="stylesheet" href="css/md.css">
+  <!-- <link rel="stylesheet" href="css/mdb.css"> -->
+</head>
+<body>
+  <article id="content" class="markdown-body"></article>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const file = params.get('file');
+    if (file) {
+      fetch('/md/' + encodeURIComponent(file))
+        .then(r => r.text())
+        .then(md => {
+          const lines = md.split('\n');
+          const body = lines.slice(4).join('\n');
+          const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
+          document.getElementById('content').innerHTML = marked.parse(bodyFixed);
+        });
+    }
+  </script>
+</body>
+</html>

@@ -10,13 +10,6 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    background: #EFF5FB;
-}
-
 .markdown-body {
     box-shadow: 0 0 12px #eee;
     border-radius: 10px;

@@ -26,7 +26,7 @@ function renderArticles() {
     });
 
     container.innerHTML = filtered.map(article => `
-    <a href="view.html?file=${encodeURIComponent(article.file)}"  target="_blank" class="article-card">
+    <a href="view.html?file=${encodeURIComponent(article.file)}" class="article-card">
         <div class="incard">   
           <div class="article-title">${article.title}</div>
           <div class="article-description">${article.description}</div>

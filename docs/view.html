@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>页面详情</title>
-  <base target="_blank">
+  <title>食不食油饼</title>
+  <!-- <base target="_blank"> -->
+  <link rel="stylesheet" media="screen and (min-width: 600px)" href="css/c1.css">
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/c2.css">
   <script src="css/md.js"></script>
   <link rel="stylesheet" href="css/md.css">
-  <!-- <link rel="stylesheet" href="css/mdb.css"> -->
-</head>
-<body>
-  <article id="content" class="markdown-body"></article>
-  <script>
-    const params = new URLSearchParams(location.search);
-    const file = params.get('file');
-    if (file) {
-      fetch('/md/' + encodeURIComponent(file))
-        .then(r => r.text())
-        .then(md => {
-          const lines = md.split('\n');
-          const body = lines.slice(4).join('\n');
-          const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
-          document.getElementById('content').innerHTML = marked.parse(bodyFixed);
-        });
+  <style>
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 0;
+      }
+
+      .markdown-body {
+        box-shadow: none
+      }
     }
-  </script>
+  </style>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <div id="nav">
+    <script>
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(html => document.getElementById('nav').innerHTML = html);
+    </script>
+  </div>
+  <!-- 版心 -->
+  <div class="container">
+    <div id="right-column">
+      <div id="card"></div>
+      <script>
+        fetch('card.html')
+          .then(response => response.text())
+          .then(html => document.getElementById('card').innerHTML = html);
+      </script>
+    </div>
+    <article id="content" class="markdown-body"></article>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const file = params.get('file');
+      if (file) {
+        fetch('/md/' + encodeURIComponent(file))
+          .then(r => r.text())
+          .then(md => {
+            const lines = md.split('\n');
+            const body = lines.slice(4).join('\n');
+            const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
+            document.getElementById('content').innerHTML = marked.parse(bodyFixed);
+          });
+      }
+    </script>
+  </div>
+
+
+
+
+
+
 </body>
+
 </html>
