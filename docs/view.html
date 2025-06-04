@@ -57,6 +57,14 @@
           });
       }
     </script>
+    <!-- 留言板 -->
+    <div id="lyb">
+      <script>
+        fetch('lyb.html')
+          .then(response => response.text())
+          .then(html => document.getElementById('lyb').innerHTML = html);
+      </script>
+    </div>
   </div>
 
 
