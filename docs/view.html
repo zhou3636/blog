@@ -42,18 +42,7 @@
           .then(html => document.getElementById('card').innerHTML = html);
       </script>
     </div>
-    <div class="c2">
-      <article id="content" class="markdown-body">
-      </article>
-      <!-- 留言板 -->
-      <div id="lyb">
-        <script>
-          fetch('lyb.html')
-            .then(response => response.text())
-            .then(html => document.getElementById('lyb').innerHTML = html);
-        </script>
-      </div>
-    </div>
+    <article id="content" class="markdown-body"></article>
     <script>
       const params = new URLSearchParams(location.search);
       const file = params.get('file');
@@ -69,12 +58,6 @@
       }
     </script>
   </div>
-
-
-
-
-
-
 </body>
 
 </html>
