@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>ArtPlayer Demo</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            margin: 2px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .artplayer-app {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="artplayer-app"></div>
+    <script src="artplayer.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoFile = urlParams.get('v') || '1.mp4'; // 默认播放 1.mp4
+        const art = new Artplayer({
+            container: '.artplayer-app',
+            url: `video/${videoFile}`,
+            //autoplay: true
+        });
+        //<a href="video.html?v=1.mp4">播放视频1</a>
+    </script>
+</body>
+
+</html>

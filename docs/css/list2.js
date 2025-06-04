@@ -6,7 +6,7 @@ let currentTag = '';
 async function init() {
 
     try {
-        const response = await fetch('https://855655.xyz/md/mdlist2.json');
+        const response = await fetch('md/mdlist2.json');
         if (!response.ok) throw new Error(`错误代码: ${response.status}`);
         articles = await response.json();
         renderTags();
