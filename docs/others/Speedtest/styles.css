@@ -36,6 +36,7 @@ body {
     box-shadow: var(--nav-shadow);
     padding: 15px 0;
     z-index: 1000;
+    height: 75px;
 }
 
 .nav-container {
@@ -108,9 +109,9 @@ body {
 /* 共享的容器样式 */
 .main-container {
     padding-top: 80px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    min-height: calc(100dvh - 75px);
+    /* display: flex; */
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -128,16 +129,14 @@ body {
     padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 50px auto;
 }
 
-.game-card:hover {
-    transform: translateY(-5px);
-}
 
 /* 标题样式 */
 h1 {
@@ -214,14 +213,10 @@ button {
 
 button:hover {
     background-color: var(--primary-dark);
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
 }
 
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(99, 102, 241, 0.4);
-}
+
 
 .button-icon {
     font-size: 1.4rem;
@@ -276,7 +271,7 @@ button:active {
 }
 
 /* 动画效果 */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -285,7 +280,7 @@ button:active {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 .result, .feedback {
     animation: fadeIn 0.3s ease-out;
@@ -578,7 +573,7 @@ button:active {
 
     .game-card {
         padding: 30px 20px;
-        margin: 0 10px;
+        margin: 50px auto;
         background-color: var(--card-background);
     }
 }
