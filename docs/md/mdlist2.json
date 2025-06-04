@@ -6,7 +6,7 @@
     "tags": [
       "关于"
     ],
-    "img": "https://vip.123pan.cn/1811790116/rr/nn.jpg",
+    "img": "n.jpg",
     "date": "2050-05-05"
   },
   {
@@ -91,16 +91,6 @@
       "软件"
     ],
     "img": "md/xl7-1.jpg",
-    "date": "2024-10-02"
-  },
-  {
-    "file": "xui.md",
-    "title": "X-UI",
-    "description": "支持xray多种协议的面板",
-    "tags": [
-      "软件"
-    ],
-    "img": "md/kk.jpg",
-    "date": "2024-09-09"
+    "date": "2024-10-03"
   }
 ]
