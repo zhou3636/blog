@@ -24,10 +24,10 @@ function renderArticles() {
         const matchTag = !currentTag || article.tags.includes(currentTag);
         return matchSearch && matchTag;
     });
-    
+
     if (filtered.length === 0) {
         container.innerHTML = `
-                <div class="article-card">未搜索到匹配搜索的文章</div>
+                <div class="article-card">未搜索到匹配文字的文章</div>
         `;
         return;
     }
@@ -35,9 +35,9 @@ function renderArticles() {
     container.innerHTML = filtered.map(article => `
     <a href="view.html?file=${encodeURIComponent(article.file)}" class="article-card">
         <div class="incard">   
-          <div class="article-title">${article.title}</div>
-          <div class="article-description">${article.description}</div>
-          <div class="article-tags">${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}</div>
+            <div class="article-title">${article.title}</div>
+            <div class="article-description">${article.description}</div>
+            <div class="article-tags">${article.tags.map(tag => `<span class="article-tag">#${tag}</span>`).join('')}</div>
         </div>
         <img class="imgbox" src="${article.img}" alt="">
     </a>
