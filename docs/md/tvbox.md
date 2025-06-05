@@ -1,7 +1,7 @@
 TVbox
 安卓电视上免费无广的看剧软件
 #软件#电影
-md/tvbox-1.jpg
+md/tvbox.jpg
 2025-05-09
 ## 地址
 <https://tvbox.clbug.com>  

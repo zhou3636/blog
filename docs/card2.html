@@ -7,6 +7,7 @@
         background-color: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(3px);
         box-shadow: 0 0 3px rgba(208, 208, 208, 0.5);
+
     }
 
     /* 用户头像 */
@@ -33,6 +34,7 @@
     .img-box img:hover {
         width: 108%;
         cursor: pointer;
+        /* transform: translate(0, 5px); */
     }
 
     /* 用户名 */
@@ -76,6 +78,7 @@
         margin: 5px auto;
         justify-content: center;
         align-items: center;
+
     }
 
     .link span {
@@ -87,6 +90,7 @@
         transition: background-color 0.3s;
         font-size: 13px;
         border: 1px solid rgba(117, 117, 117, 0.1);
+
     }
 
     .link span:hover {
@@ -94,10 +98,10 @@
     }
 
     #hdimg {
+        /* width: 80vw; */
+        /* max-width: 800px; */
+        /* max-height: 90vh; */
         border: none;
-        width: 100vw;
-        max-width: 1200px;
-        min-height: 300px;
         box-shadow: none;
         position: absolute;
         top: 50%;
@@ -105,57 +109,34 @@
         transform: translate(-50%, -50%);
         z-index: 1000;
         outline: none;
-        background: transparent;
-        /* border: 1px solid #000; */
     }
 
-    #hdimg::backdrop {
-        background: rgba(0, 0, 0, 0.8);
-    }
+    /* #hdimg::backdrop {
+        background: #e1e1e1;
+    } */
 
     #hdimg img {
         display: block;
-        width: 100%;
+        width: 80vw;
+        max-width: 1200px;
         object-fit: cover;
-        border-radius: 8px;
-    }
-
-    /* 加载动画 */
-    .loading {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border: 3px solid #f3f3f3;
-        border-top: 3px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto;
-        position: absolute;
-        right: 0;
-        left: 0;
-        top: 0;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
+        cursor: pointer;
     }
 </style>
-
-<dialog id="hdimg" onclick="hdimg.close()"></dialog>
-
+<dialog id="hdimg">
+    <img src="image/nxd-2.jpeg" onclick="hdimg.close()">
+</dialog>
 <div class="card">
     <!-- 用户的头像 -->
-    <div class="img-box" onclick="showhdimg()">
+    <div class="img-box" onclick="hdimg.showModal()">
         <img src="image/nxd-4.jpg" alt="">
     </div>
 
     <!-- 用户名 -->
     <h2>食不食油饼</h2>
     <span class="info">&emsp;小黑子们大家好！我是一个练习一坤的个人练习生，喜欢唱跳rap篮球。</span>
+    <!-- <div class="link">
+        <span><a href="https://www.github.com/" target="_blank">GitHub</a></span>
+        <span><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></span>
+    </div> -->
 </div>

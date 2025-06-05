@@ -1,7 +1,7 @@
 图吧工具箱
 DIY爱好者的必备工具集合
 #软件
-md/tbtool.jpg
+md/tbtool-0.jpg
 2025-05-08
 ## 图拉丁吧工具箱  
 ### [官方网站](https://www.tbtool.cn/)  

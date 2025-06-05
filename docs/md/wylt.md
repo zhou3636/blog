@@ -1,7 +1,7 @@
 简单的网页聊天
 部署一个简单的网页聊天工具，适合临时传文本，文件
 #软件#分享
-md/wyls.png
+md/wylt.jpg
 2025-06-01
 # chat-app
 #### 源码<https://github.com/zhou3636/chat-app>
@@ -11,4 +11,4 @@ md/wyls.png
 
 .  
 ..  
-![](wyls.png)
+![](wylt.jpg)
