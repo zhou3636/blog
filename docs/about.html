@@ -31,22 +31,23 @@
         div img {
             display: block;
         }
+
         .thanks {
-            display: inline-block; 
+            display: inline-block;
             line-height: 1.6;
         }
-        .thanks a{
+
+        .thanks a {
             background-color: #e8f4ff;
             border: 1px solid rgba(117, 117, 117, 0.2);
             border-radius: 10px;
             padding: 1px 5px;
             transition: background-color 0.3s;
         }
-        
-        .thanks a:hover{
+
+        .thanks a:hover {
             background-color: #d1e9ff;
         }
-
     </style>
 </head>
 
@@ -69,6 +70,9 @@
                     .then(response => response.text())
                     .then(html => document.getElementById('card').innerHTML = html);
             </script>
+
+        </div>
+        <div id="left-column">
             <span class="thanks">--致谢<br>
                 <a href="https://github.com/" target="_blank">GitHub</a><br>
                 <a href="https://aws.amazon.com/" target="_blank">Amazon</a><br>
@@ -76,8 +80,6 @@
                 <a href="https://www.anthropic.com//" target="_blank">Claude</a><br>
                 <a href="https://yuanbao.tencent.com/" target="_blank">腾讯元宝</a><br>&ensp;提供免费AI服务
             </span>
-        </div>
-        <div id="left-column">
             <div class="artplayer-app"></div>
             <script src="css/artplayer.js"></script>
             <script>

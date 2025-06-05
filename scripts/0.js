@@ -14,11 +14,11 @@ function parseMdFile(filePath) {
         // 直接取前5行（保留空行位置）
         const effectiveLines = lines.slice(0, 5);
         const [
-            titleLine,       // 第1行
-            descriptionLine, // 第2行
-            tagsLine,        // 第3行
-            imgLine,         // 第4行
-            dateLine         // 第5行
+            titleLine,
+            descriptionLine,
+            tagsLine,
+            imgLine,
+            dateLine
         ] = effectiveLines;
         
         // 解析标签（兼容不同格式）
@@ -51,6 +51,7 @@ function generateMdList() {
         // 解析所有文件
         const result = files
             .map(parseMdFile)
+            .sort((a, b) => b.date.localeCompare(a.date))
             .filter(Boolean); // 过滤解析失败的文件
         
         // 写入JSON文件
