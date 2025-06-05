@@ -12,8 +12,8 @@ md/tvbox.jpg
 提取码`mBrt`  
 
 本地下载  
-[手机版](https://rr.855955.xyz/OK影视手机版.apk)  
-[电视版](https://rr.855955.xyz/TVBox电视版.apk)  
+[手机版](https://rr.855655.xyz/OK影视手机版.apk)  
+[电视版](https://rr.855655.xyz/TVBox电视版.apk)  
 
 ## 使用方法  
 把安装包存到U盘插入电视上安装  
