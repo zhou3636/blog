@@ -17,10 +17,3 @@ function showhdimg() {
     // 开始加载图片
     img.src = 'image/nxd-2.jpeg';
 }
-
-// 点击背景关闭弹窗
-document.getElementById('hdimg').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.close();
-    }
-});
