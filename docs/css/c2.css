@@ -1,3 +1,4 @@
+/* 手机css */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +30,7 @@ a:visited {
     color: rgb(0, 0, 0);
 }
 
-/* 导航栏-1 */
+/* 导航栏 */
 .nav {
     width: 100%;
     height: 70px;
