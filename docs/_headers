@@ -1,2 +1,2 @@
-/css/*
-  Cache-Control: public, max-age=600
+/*
+  Cache-Control: max-age=300
