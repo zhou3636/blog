@@ -1,0 +1,2 @@
+/path/*.css
+  Cache-Control: public, max-age=600
