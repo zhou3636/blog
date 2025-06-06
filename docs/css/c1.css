@@ -27,7 +27,11 @@ a {
 a:visited {
     color: rgb(0, 0, 0);
 }
-
+.navbox{
+    width: 100vw;
+    min-height: 70px;
+    background-color: rgb(68, 134, 222);
+}
 
 /* 版心的样式 */
 .container {

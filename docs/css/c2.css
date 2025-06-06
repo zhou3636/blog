@@ -30,82 +30,10 @@ a:visited {
 }
 
 /* 导航栏 */
-.nav {
-    width: 100%;
-    height: 70px;
+.navbox{
+    width: 100vw;
+    min-height: 70px;
     background-color: rgb(68, 134, 222);
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-/* 导航栏中的 log */
-.nav img {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    border-radius:20%;
-    border: 1px solid #0000003c;
-}
-
-.nav h2 {
-    padding-left: 10px;
-    color: #EFF5FB;
-}
-
-.nav .title {
-    width: 50px;
-    height: 40px;
-    position: absolute;
-    right: 0px;
-    top: 15px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-.nav .title:hover {
-    width: 100px;
-    height: auto;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.title-2 {
-    width: 100px;
-    padding: 8px 10px;
-    font-size: 18px;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 5px;
-    margin: auto;
-    border-bottom: 1px solid #828282;
-    /* border-top: none; */
-}
-
-.nav .title a {
-    color: rgb(44, 44, 44);
-}
-
-.t1 {
-    display: flex;
-}
-
-.t2 {
-    flex: 1;
-}
-
-.t3 {
-    width: 50px;
-    height: 40px;
-    /* background-color: #dbdbdb; */
-}
-
-.t4 {
-    width: 30px;
-    height: 4px;
-    background-color: rgb(233, 233, 233);
-    margin: 7px auto;
-    border-radius: 2px;
 }
 
 /* 版心 */
