@@ -45,7 +45,8 @@ function generateMdList() {
     try {
         // 获取所有.md文件
         const files = fs.readdirSync(MD_DIR)
-            .filter(f => f.endsWith('.md'))
+            // .filter(f => f.endsWith('.md'))
+            .filter(f => f.endsWith('.md') || f.endsWith('.html'))
             .map(f => path.join(MD_DIR, f));
         
         // 解析所有文件

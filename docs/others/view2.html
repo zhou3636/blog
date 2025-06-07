@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,6 @@
   <link rel="stylesheet" href="css/md.css">
   <!-- <link rel="stylesheet" href="css/mdb.css"> -->
 </head>
-<style>
-  .markdown-body{
-    margin: 0 auto;
-
-  }
-</style>
-
 <body>
   <article id="content" class="markdown-body"></article>
   <script>
@@ -25,20 +17,21 @@
     if (file) {
       const fileExtension = file.toLowerCase().split('.').pop();
       if (fileExtension === 'html') {
-        window.location.href = 'md/' + file;
-      }
-      else if (fileExtension === 'md') {
+        window.location.href = 'md/'+file;
+      } else if (fileExtension === 'md') {
         fetch('/md/' + encodeURIComponent(file))
-        .then(r => r.text())
-        .then(md => {
-          const lines = md.split('\n');
-          const body = lines.slice(4).join('\n');
-          const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
-          document.getElementById('content').innerHTML = marked.parse(bodyFixed);
-        });
+          .then(r => r.text())
+          .then(md => {
+            const lines = md.split('\n');
+            const body = lines.slice(4).join('\n');
+            const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
+            document.getElementById('content').innerHTML = marked.parse(bodyFixed);
+          });
+      } else {
+        // 其他文件类型的处理
+        document.getElementById('content').innerHTML = '<p>不支持的文件类型：' + fileExtension + '</p>';
       }
     }
   </script>
 </body>
-
 </html>
