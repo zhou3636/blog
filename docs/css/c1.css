@@ -28,7 +28,7 @@ a:visited {
     color: rgb(0, 0, 0);
 }
 .navbox{
-    width: 100vw;
+    width: 100%;
     min-height: 70px;
     background-color: rgb(68, 134, 222);
 }
