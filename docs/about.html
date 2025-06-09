@@ -9,58 +9,13 @@
     <link rel="stylesheet" media="screen and (min-width: 600px)" href="css/c1.css">
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/c2.css">
     <style>
-        .artplayer-app {
-            margin: 10px;
-            margin-top: 15px;
-            overflow: hidden;
-            aspect-ratio: 16 / 9;
-            ;
-            border-radius: 8px;
-        }
 
-        .txt {
-            margin: 20px auto;
-            text-align: center;
-            background: #f1ffedbb;
-            width: fit-content;
-            padding: 8px 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 3px #f1ffedbb;
-        }
 
-        div img {
-            display: block;
-        }
-
-        .thanks {
-            display: inline-block;
-            line-height: 1.6;
-        }
-
-        .thanks a {
-            background-color: #e8f4ff;
-            border: 1px solid rgba(117, 117, 117, 0.2);
-            border-radius: 10px;
-            padding: 1px 5px;
-            transition: background-color 0.3s;
-        }
-
-        .thanks a:hover {
-            background-color: #d1e9ff;
-        }
+ 
     </style>
 </head>
 
 <body>
-    <!-- 导航栏 -->
-    <div class="navbox" id="nav">
-        <script>
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(html => document.getElementById('nav').innerHTML = html);
-        </script>
-        <script src="css/avatar.js"></script>
-    </div>
     <!-- 版心 -->
     <div class="container">
         <div id="right-column">
@@ -72,7 +27,7 @@
             </script>
 
         </div>
-        <div id="left-column">
+        <div>
             <span class="thanks">--致谢<br>
                 <a href="https://github.com/" target="_blank">GitHub</a><br>
                 <a href="https://aws.amazon.com/" target="_blank">Amazon</a><br>
@@ -80,23 +35,7 @@
                 <a href="https://www.anthropic.com//" target="_blank">Claude</a><br>
                 <a href="https://yuanbao.tencent.com/" target="_blank">腾讯元宝</a><br>&ensp;提供免费AI服务
             </span>
-            <div class="artplayer-app"></div>
-            <script src="css/artplayer.js"></script>
-            <script>
-                const art = new Artplayer({
-                    container: '.artplayer-app',
-                    poster: 'image/n.jpg',
-                    url: `https://rr.855655.xyz/nxd/naxida2.mp4`,
-                    loop: true,
-                    theme: '#14b0f8',
-                    pip: true, //画中画 的开关按钮
-                    fullscreen: true, //窗口全屏
-                    miniProgressBar: true, //迷你进度条
-                });
-            </script>
-            <div class="txt">
-                <h2>白草净华 无垠无忧</h2>
-            </div>
+        
         </div>
 
 

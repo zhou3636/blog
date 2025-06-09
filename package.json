@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "build": "node scripts/1.js && node scripts/0.js"
+    "build": "node scripts/1.js && node scripts/img.js && node scripts/slt.js"
   }
+ "devDependencies": {
+    "sharp": "^0.32.6"
+ }
 }
