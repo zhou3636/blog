@@ -60,12 +60,51 @@ class HashRouter {
     }
 }
 
-// 页面文件路径配置
-const pageFiles = {
-    '/': 'main.html',
-    '/home': 'home.html',
-    '/photo': 'photo.html',
-    '/about': 'about.html'
+// 动态加载JS文件的工具函数 - 支持强制重新加载
+function loadScript(src, forceReload = false) {
+    return new Promise((resolve, reject) => {
+        // 如果需要强制重新加载，先移除已存在的脚本
+        if (forceReload) {
+            const existingScript = document.querySelector(`script[src="${src}"]`);
+            if (existingScript) {
+                existingScript.remove();
+            }
+        } else {
+            // 检查是否已经加载过
+            const existingScript = document.querySelector(`script[src="${src}"]`);
+            if (existingScript) {
+                resolve();
+                return;
+            }
+        }
+
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+        document.head.appendChild(script);
+    });
+}
+
+// 页面和对应JS文件的配置
+const pageConfig = {
+    '/': {
+        htmlFile: 'main.html',
+        jsFile: null
+    },
+    '/home': {
+        htmlFile: 'home.html',
+        jsFile: 'js/wzlist.js' 
+    },
+    '/photo': {
+        htmlFile: 'photo.html',
+        jsFile: 'js/imglist.js' 
+        
+    },
+    '/about': {
+        htmlFile: 'about.html',
+        jsFile: null
+    }
 };
 
 // 缓存已加载的页面内容
@@ -120,10 +159,10 @@ async function loadPageContent(filePath) {
 const router = new HashRouter();
 const appContainer = document.getElementById('app');
 
-// 渲染页面内容的函数
+// 修改后的渲染页面函数 - 解决方案
 async function renderPage(route) {
-    const filePath = pageFiles[route];
-    if (!filePath) {
+    const config = pageConfig[route];
+    if (!config) {
         appContainer.innerHTML = '<div class="error-page"><h2>页面未找到</h2></div>';
         return;
     }
@@ -131,13 +170,30 @@ async function renderPage(route) {
     // 显示加载状态
     appContainer.innerHTML = '<div class="loading">正在加载...</div>';
     
-    // 加载页面内容
-    const content = await loadPageContent(filePath);
-    appContainer.innerHTML = content;
-    
-    // 执行页面加载后的回调
-    if (typeof window.onPageLoaded === 'function') {
-        window.onPageLoaded(route);
+    try {
+        // 1. 先加载HTML内容
+        const content = await loadPageContent(config.htmlFile);
+        appContainer.innerHTML = content;
+        
+        // 2. 等待DOM更新
+        await new Promise(resolve => setTimeout(resolve, 0));
+        
+        // 3. 如果有对应的JS文件，强制重新加载（替代方案）
+        if (config.jsFile) {
+            await loadScript(config.jsFile, true); // 强制重新加载
+        }
+        
+        // 5. 执行页面加载后的回调
+        if (typeof window.onPageLoaded === 'function') {
+            window.onPageLoaded(route);
+        }
+        
+    } catch (error) {
+        console.error('页面加载失败:', error);
+        appContainer.innerHTML = `<div class="error-page">
+            <h2>页面加载失败</h2>
+            <p>${error.message}</p>
+        </div>`;
     }
 }
 
@@ -148,25 +204,22 @@ router.route('/', () => {
 
 router.route('/home', () => {
     renderPage('/home');
-    list()  
 });
 
 router.route('/photo', () => {
     renderPage('/photo');
-    img()
 });
 
 router.route('/about', () => {
     renderPage('/about');
 });
 
-
 // 清除页面缓存的工具函数
 function clearPageCache(route = null) {
     if (route) {
-        const filePath = pageFiles[route];
-        if (filePath && pageCache[filePath]) {
-            delete pageCache[filePath];
+        const config = pageConfig[route];
+        if (config && config.htmlFile && pageCache[config.htmlFile]) {
+            delete pageCache[config.htmlFile];
         }
     } else {
         // 清除所有缓存
@@ -176,17 +229,25 @@ function clearPageCache(route = null) {
     }
 }
 
+// 清除脚本缓存的工具函数
+function removeScript(src) {
+    const script = document.querySelector(`script[src="${src}"]`);
+    if (script) {
+        script.remove();
+    }
+}
+
 // 预加载指定页面
 async function preloadPage(route) {
-    const filePath = pageFiles[route];
-    if (filePath && !pageCache[filePath]) {
-        await loadPageContent(filePath);
+    const config = pageConfig[route];
+    if (config && config.htmlFile && !pageCache[config.htmlFile]) {
+        await loadPageContent(config.htmlFile);
     }
 }
 
 // 预加载所有页面
 async function preloadAllPages() {
-    const loadPromises = Object.keys(pageFiles).map(route => preloadPage(route));
+    const loadPromises = Object.keys(pageConfig).map(route => preloadPage(route));
     await Promise.all(loadPromises);
 }
 
@@ -199,10 +260,3 @@ function addRouteGuard(path, beforeEnter) {
         }
     });
 }
-
-// 示例：添加路由守卫
-// addRouteGuard('/about', () => {
-//     console.log('即将进入关于页面');
-//     return true; // 返回false可以阻止路由跳转
-// });
-

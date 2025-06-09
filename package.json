@@ -2,7 +2,7 @@
   "scripts": {
     "build": "node scripts/1.js && node scripts/img.js && node scripts/slt.js"
   },
- "devDependencies": {
+  "devDependencies": {
     "sharp": "^0.32.6"
   }
 }

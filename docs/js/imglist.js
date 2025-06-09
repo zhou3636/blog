@@ -21,7 +21,7 @@ async function img() {
                     <img class="img-s" src="img2/${item.file}" alt="图片" onerror="this.style.display='none'">
                     </div>
                     <span class='title'>${item.title}</span>
-                    <span class='date'>${item.date}</span>
+                    <span class='date'>${item.title1}</span>
                 </div>  
             `;
             container.appendChild(div);
@@ -35,3 +35,4 @@ async function img() {
 
 // 页面加载完成后执行
 // document.addEventListener('DOMContentLoaded', loadImageList);
+img()

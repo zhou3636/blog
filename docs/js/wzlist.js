@@ -1,6 +1,6 @@
-let articles = []; 
-let currentSearch = '';
-let currentTag = '';
+var articles = []; 
+var currentSearch = '';
+var currentTag = '';
 
 // 加载数据并初始化页面
 async function list() {
@@ -57,31 +57,12 @@ function renderTags() {
     ].join('');
 }
 // 事件监听
-// document.getElementById('searchInput').addEventListener('input', (e) => {
-//     currentSearch = e.target.value;
-//     renderArticles();
-// });
-
-// document.getElementById('tagsContainer').addEventListener('click', (e) => {
-//     if (e.target.classList.contains('tag')) {
-//         currentTag = e.target.dataset.tag;
-//         document.querySelectorAll('#tagsContainer .tag').forEach(tag => {
-//             tag.style.backgroundColor = tag === e.target ? '#d1e9ff' : '#e8f4ffcc';
-//         });
-//         renderArticles();
-//     }
-// });
-
-// 初始化
-// init();
-//处理搜索事件
-appContainer.addEventListener('input', (e) => {
-    if (e.target.id === 'searchInput') {
-        currentSearch = e.target.value;
-        renderArticles();
-    }
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    currentSearch = e.target.value;
+    renderArticles();
 });
-appContainer.addEventListener('click', (e) => {
+
+document.getElementById('tagsContainer').addEventListener('click', (e) => {
     if (e.target.classList.contains('tag')) {
         currentTag = e.target.dataset.tag;
         document.querySelectorAll('#tagsContainer .tag').forEach(tag => {
@@ -90,3 +71,22 @@ appContainer.addEventListener('click', (e) => {
         renderArticles();
     }
 });
+
+// 初始化
+list();
+// 处理搜索事件
+// appContainer.addEventListener('input', (e) => {
+//     if (e.target.id === 'searchInput') {
+//         currentSearch = e.target.value;
+//         renderArticles();
+//     }
+// });
+// appContainer.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('tag')) {
+//         currentTag = e.target.dataset.tag;
+//         document.querySelectorAll('#tagsContainer .tag').forEach(tag => {
+//             tag.style.backgroundColor = tag === e.target ? '#d1e9ff' : '#e8f4ffcc';
+//         });
+//         renderArticles();
+//     }
+// });
