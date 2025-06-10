@@ -1,4 +1,4 @@
-var articles = []; 
+var articles = [];
 var currentSearch = '';
 var currentTag = '';
 
@@ -37,7 +37,10 @@ function renderArticles() {
         <div class="incard">   
             <div class="article-title">${article.title}</div>
             <div class="article-description">${article.description}</div>
-            <div class="article-tags">${article.tags.map(tag => `<span class="article-tag">#${tag}</span>`).join('')}</div>
+            <div class="article-tags">
+                <span class="date-wz">${article.date}</span>
+                ${article.tags.map(tag => `<span class="article-tag">#${tag}</span>`).join('')}
+            </div>
         </div>
         <img class="imgbox" src="${article.img}" alt="">
     </a>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-resizing Text</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+
+        .text-container {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .tt2 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+            font-weight: 500;
+            color: #2d3748;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <div class="tt2" id="autoText">与其逼自己一把，不如放自己一马</div>
+    </div>
+
+    <script>
+        function adjustFontSize() {
+            const textElement = document.getElementById('autoText');
+            const container = textElement.parentElement;
+            
+            // Start with a large font size
+            let fontSize = 100;
+            textElement.style.fontSize = fontSize + 'px';
+            
+            // Reduce font size until text fits within container width
+            while (textElement.scrollWidth > container.clientWidth && fontSize > 12) {
+                fontSize -= 1;
+                textElement.style.fontSize = fontSize + 'px';
+            }
+        }
+
+        // Adjust font size on load and resize
+        window.addEventListener('load', adjustFontSize);
+        window.addEventListener('resize', adjustFontSize);
+    </script>
+</body>
+</html>

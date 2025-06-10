@@ -72,14 +72,15 @@
     }
 
     .tt1 {
+        /* width: 90%; */
         font-weight: 500;
-        font-size: 28px;
+        font-size: 9vw;
         padding-bottom: 10px;
         text-align: center;
     }
 
     .tt2 {
-        font-size: 20px;
+        font-size: 5.5vw;
         text-align: center;
         margin-bottom: 8px;
     }
