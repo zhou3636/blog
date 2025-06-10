@@ -27,7 +27,7 @@ function renderArticles() {
 
     if (filtered.length === 0) {
         container.innerHTML = `
-                <div class="article-card">未搜索到匹配文字的文章</div>
+                <div class="article-card">未搜索到相关文字的文章</div>
         `;
         return;
     }

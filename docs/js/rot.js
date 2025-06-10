@@ -89,11 +89,11 @@ function loadScript(src, forceReload = false) {
 // 页面和对应JS文件的配置
 const pageConfig = {
     '/': {
-        htmlFile: 'main.html',
+        htmlFile: 'home.html',
         jsFile: null
     },
-    '/home': {
-        htmlFile: 'home.html',
+    '/wz': {
+        htmlFile: 'wz.html',
         jsFile: 'js/wzlist.js' 
     },
     '/photo': {
@@ -202,8 +202,8 @@ router.route('/', () => {
     renderPage('/');
 });
 
-router.route('/home', () => {
-    renderPage('/home');
+router.route('/wz', () => {
+    renderPage('/wz');
 });
 
 router.route('/photo', () => {

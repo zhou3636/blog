@@ -20,8 +20,8 @@ async function img() {
                     <div class="photo" data-src="img/${item.file}" onclick="showImage(this)">
                     <img class="img-s" src="img2/${item.file}" alt="图片" onerror="this.style.display='none'">
                     </div>
-                    <span class='title'>${item.title}</span>
-                    <span class='date'>${item.title1}</span>
+                    <span class='title-p1'>${item.title}</span>
+                    <span class='title-p2'>${item.title1}</span>
                 </div>  
             `;
             container.appendChild(div);

@@ -47,19 +47,17 @@
     height: 100%;
     object-fit: cover;
 }
-.title{
-    font-size: 20px;
-    font-weight: 500;
-    color: #3e3e3e;
+.title-p1{
+    color: #232323;
 }
 
-.date {
-    font-size: 14px;
+.title-p2 {
+    font-size: 15px;
     color: #383838;
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .container-2 {
         padding: 10px;
     }
