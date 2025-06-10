@@ -53,6 +53,13 @@ body {
   padding: 0 20px;
 }
 
+.logo-i{
+  display: block;
+  height: 55px;
+  margin-bottom: 5px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 .logo {
   font-weight: 800;
   font-size: 24px;
@@ -67,7 +74,7 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  height: 100%;
+  /* height: 60%; */
   gap: 25px;
 }
 
@@ -95,11 +102,10 @@ body {
   color: var(--primary);
 }
 
-.nav-links a::after,
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 10px;
+  bottom: -3px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -111,7 +117,7 @@ body {
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-  width: 100%;
+  width: 95%;
   background-color: var(--primary);
   border-radius: 2px;
 }
@@ -121,13 +127,13 @@ body {
   max-width: 1200px;
   margin: auto;
   min-height: calc(100vh - var(--nav-height) - 80px);
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(0px);
+    transform: translateY(25px);
   }
 
   to {
@@ -155,22 +161,6 @@ body {
 }
 
 /* 响应式设计 */
-@media (max-width: 900px) {
-
-  .documentation-container,
-  .about-container {
-    grid-template-columns: 1fr;
-  }
-
-  .doc-nav {
-    position: static;
-    max-height: none;
-  }
-
-  .contact-card {
-    position: static;
-  }
-}
 
 @media (max-width: 700px) {
   .nav-container {
@@ -195,9 +185,8 @@ body {
     text-decoration: none;
   }
 
-  .nav-links a::after,
   .nav-links a::after {
-    bottom: 15px;
+    bottom: -2px;
     height: 1.5px;
   }
 
