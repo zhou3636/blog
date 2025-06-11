@@ -53,23 +53,21 @@ body {
   padding: 0 20px;
 }
 
-.logo-i{
-  display: block;
-  height: 55px;
-  margin-bottom: 5px;
-  object-fit: cover;
+.logo-box {
+  height: 60px;
+  width: 80px;
   border-radius: 5px;
-}
-.logo {
-  font-weight: 800;
-  font-size: 24px;
-  color: var(--primary);
-  text-decoration: none;
+  overflow: hidden;
 }
 
-.logo span {
-  color: var(--accent);
+.logo-1 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
 }
+
 
 .nav-links {
   display: flex;
@@ -133,12 +131,12 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
