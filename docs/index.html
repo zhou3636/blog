@@ -63,25 +63,9 @@
                 </dialog>
                 <div id="pts" class="photos"></div>
             </div>
-
         </div>
         <!-- 第四页 -->
         <div id="about-page" class="page" style="display: none;">
-            <div class="container-a">
-                <div>
-                    <img src="image/mb.gif" alt="" class="mbgif">
-                    <span class="thanks">
-                        <p>致谢</p>
-                        <a href="https://www.anthropic.com//" target="_blank">Claude</a>
-                        <a href="https://yuanbao.tencent.com/" target="_blank">腾讯元宝</a><br>
-                        <p>提供免费AI服务</p>
-                        <a href="https://github.com/" target="_blank">GitHub</a>
-                        <a href="https://aws.amazon.com/" target="_blank">Amazon</a>
-                        <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a><br>
-                        <p>提供免费云服务</p>
-                    </span>
-                </div>
-            </div>
         </div>
         <!-- 第五页 -->
     </div>
@@ -164,8 +148,10 @@
 
         // 懒加载图片列表
         // 全局变量，记录是否已加载
-        let galleryLoaded = false; 
+        let galleryLoaded = false;
         let docsLoaded = false;
+        let aboutLoaded = false;
+        window.addEventListener('load', loadGalleryImages)
         window.addEventListener('hashchange', loadGalleryImages);
         function loadGalleryImages() {
             const hash2 = window.location.hash;
@@ -180,6 +166,14 @@
                 script.src = 'js/wzlist.js';
                 document.head.appendChild(script);
                 docsLoaded = true;
+            }
+            else if (hash2 === '#about' && !aboutLoaded) {
+                fetch('about.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('about-page').innerHTML = html;
+                        aboutLoaded = true;
+                    })
             }
         }
 
