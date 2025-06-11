@@ -44,10 +44,12 @@
     object-fit: cover;
 }
 .title-p1{
+    display: none;
     color: #232323;
 }
 
 .title-p2 {
+    display: none;
     font-size: 15px;
     color: #383838;
 }

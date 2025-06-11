@@ -26,7 +26,7 @@
         .then(r => r.text())
         .then(md => {
           const lines = md.split('\n');
-          const body = lines.slice(4).join('\n');
+          const body = lines.slice(5).join('\n');
           const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
           document.getElementById('content').innerHTML = marked.parse(bodyFixed);
         });
