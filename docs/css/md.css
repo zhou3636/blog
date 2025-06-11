@@ -10,6 +10,14 @@
     box-sizing: border-box;
 }
 
+.rt-1 a{
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
 .markdown-body {
     box-shadow: 0 0 12px #eee;
     border-radius: 10px;

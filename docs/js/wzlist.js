@@ -33,13 +33,13 @@ function renderArticles() {
     }
 
     container.innerHTML = filtered.map(article => `
-    <a href="view.html?file=${encodeURIComponent(article.file)}" target="_blank" class="article-card">
+    <a href="view.html?file=${encodeURIComponent(article.file)}" class="article-card">
         <div class="incard">   
             <div class="article-title">${article.title}</div>
             <div class="article-description">${article.description}</div>
             <div class="article-tags">
                 <span class="date-wz">${article.date}</span>
-                ${article.tags.map(tag => `<span class="article-tag">#${tag}</span>`).join('')}
+                ${article.tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
             </div>
         </div>
         <img class="imgbox" src="${article.img}" alt="">

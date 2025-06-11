@@ -38,17 +38,20 @@
     font-size: 35px;
     padding-bottom: 10px;
     text-align: center;
+    text-shadow: 0 0 3px #000;
 }
 
 .tt2 {
     font-size: 20px;
     margin-bottom: 10px;
     text-align: center;
+    text-shadow: 0 0 3px #000;
 }
 
 .tt3 {
     font-size: 16px;
     text-align: center;
+    text-shadow: 0 0 3px #000;
 }
 
 @media screen and (max-width: 600px) {

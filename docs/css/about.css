@@ -16,7 +16,7 @@
     padding: 3px 15px;
     transition: background-color 0.3s;
     color: azure;
-    /* background-color: rgba(0, 0, 0, 0.3); */
+    text-shadow: 0 0 3px #000;
 }
 .thanks a {
     border-radius: 30px;
