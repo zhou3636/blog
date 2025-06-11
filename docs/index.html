@@ -17,7 +17,7 @@
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo-box">
+            <a href="/" class="logo-box">
                 <img src="image/blog.png" alt="" class="logo-1">
             </a>
             <ul class="nav-links">
@@ -31,7 +31,7 @@
     <!-- 页面容器 -->
     <div id="app">
         <!-- 第一页 -->
-        <div id="home-page" class="page" style="display: block;">
+        <div id="home-page" class="page" style="display: none;">
             <div class="avt">
                 <img src="image/mb.jpg" alt="">
                 <div class="tt">
@@ -67,13 +67,9 @@
         <!-- 第四页 -->
         <div id="about-page" class="page" style="display: none;">
         </div>
-        <!-- 第五页 -->
+        <!-- 第五页... -->
     </div>
-
-    <!-- <script src="js/wzlist.js"></script> -->
-    <!-- <script src="js/imglist.js"></script> -->
     <script src="js/hdimg.js"></script>
-
     <script>
         // 路由管理类
         class HashRouter {
@@ -134,9 +130,8 @@
             router.addRoute('about', 'about-page');
         });
 
-        // 初始化加载时执行
+        // 监听hash变化改变背景
         window.addEventListener('load', updateBackground);
-        // 监听hash变化
         window.addEventListener('hashchange', updateBackground);
         function updateBackground() {
             const hash = window.location.hash;
@@ -146,7 +141,7 @@
             document.body.className = bgClass;
         }
 
-        // 懒加载图片列表
+        // 监听hash变化加载js
         // 全局变量，记录是否已加载
         let galleryLoaded = false;
         let docsLoaded = false;
