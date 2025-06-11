@@ -86,8 +86,8 @@
         <!-- 第五页 -->
     </div>
 
-    <script src="js/wzlist.js"></script>
-    <script src="js/imglist.js"></script>
+    <!-- <script src="js/wzlist.js"></script> -->
+    <!-- <script src="js/imglist.js"></script> -->
     <script src="js/hdimg.js"></script>
 
     <script>
@@ -161,6 +161,28 @@
             else if (hash === '#docs' || hash === '#gallery') bgClass = 'bg-2';
             document.body.className = bgClass;
         }
+
+        // 懒加载图片列表
+        // 全局变量，记录是否已加载
+        let galleryLoaded = false; 
+        let docsLoaded = false;
+        window.addEventListener('hashchange', loadGalleryImages);
+        function loadGalleryImages() {
+            const hash2 = window.location.hash;
+            if (hash2 === '#gallery' && !galleryLoaded) {
+                const script = document.createElement('script');
+                script.src = 'js/imglist.js';
+                document.head.appendChild(script);
+                galleryLoaded = true;
+            }
+            else if (hash2 === '#docs' && !docsLoaded) {
+                const script = document.createElement('script');
+                script.src = 'js/wzlist.js';
+                document.head.appendChild(script);
+                docsLoaded = true;
+            }
+        }
+
     </script>
 </body>
 
