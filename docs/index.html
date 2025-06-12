@@ -20,12 +20,12 @@
             <a href="/" class="logo-box">
                 <img src="image/blog.png" alt="" class="logo-1">
             </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">主页</a></li>
-                <li><a href="#docs" class="nav-link">文档</a></li>
-                <li><a href="#gallery" class="nav-link">壁纸</a></li>
-                <li><a href="#about" class="nav-link">关于</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">主页</a>
+                <a href="#docs" class="nav-link">文档</a>
+                <a href="#gallery" class="nav-link">壁纸</a>
+                <a href="#about" class="nav-link">关于</a>
+            </div>
         </div>
     </nav>
     <!-- 页面容器 -->
@@ -135,11 +135,37 @@
         window.addEventListener('hashchange', updateBackground);
         function updateBackground() {
             const hash = window.location.hash;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const navbar = document.querySelector('.navbar');
             let bgClass = 'bg-1';
-            if (hash == '#/' || hash === '#/about') bgClass = 'bg-1';
-            else if (hash === '#docs' || hash === '#gallery') bgClass = 'bg-2';
+            if (hash == '#home' || hash === '#about') { bgClass = 'bg-1'; }
+            else if (hash === '#docs' || hash === '#gallery') { bgClass = 'bg-2'; }
             document.body.className = bgClass;
         }
+
+        // 监听hash变化改变导航栏颜色
+        window.addEventListener('load', updateNavLinkColor);
+        window.addEventListener('hashchange', updateNavLinkColor);
+        function updateNavLinkColor() {
+            const hash = window.location.hash;
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbar = document.querySelector('.navbar');
+            // 设置标题背景色
+            navLinks.forEach(link => {
+                if (hash === '#docs' || hash === '#gallery') {
+                    link.style.color = '#333';
+                } else {
+                    link.style.color = '#eee';
+                }
+            });
+            // 设置标题栏背景色
+            if (hash === '#docs' || hash === '#gallery') {
+                navbar.style.backgroundColor = '#fff';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+            }
+        }
+
 
         // 监听hash变化加载js
         // 全局变量，记录是否已加载

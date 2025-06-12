@@ -11,51 +11,34 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <style>
+  body {
+    background: linear-gradient(135deg, #f5f7fa, #e4e7ec);
+  }
+
+  .navbar {
+    background-color: white;
+  }
+
   .markdown-body {
     margin: 0 auto;
+    animation: fadeIn 0.5s ease;
   }
 
-  .nav-links a.active {
-    color: initial;
+  .nav-link {
+    color: #13007f;
   }
-
-  .nav-links a.active::after {
-    width: 0;
-  }
-
-  .nav-links a:hover {
-    color: var(--primary);
-  }
-
-  .nav-links a:hover::after {
-    width: 95%;
-    background-color: var(--primary);
-    border-radius: 2px;
-  }
-  .rt-1 a{
-    margin: 0 10px;
-    display: block;
-    width: 60px;
-    color: #444;
-    text-decoration: none;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    /* border: 1px solid rgba(0, 0, 0, 0.3); */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-}
 </style>
 
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <h3 class="rt-1"><a href="javascript:history.back()" target="_self">返回</a></h3>
-      <ul class="nav-links">
-        <li><a href="/#home" class="nav-link active" target="_self">主页</a></li>
-        <li><a href="/#docs" class="nav-link" target="_self">文档</a></li>
-        <li><a href="/#gallery" class="nav-link" target="_self">壁纸</a></li>
-        <li><a href="/#about" class="nav-link" target="_self">关于</a></li>
-      </ul>
+      <a href="/" target="_self" class="logo-box">
+        <img src="image/blog.png" alt="" class="logo-1">
+      </a>
+      <div class="nav-links">
+        <a href="javascript:history.back()" class="nav-link" target="_self">返回上页</a>
+
+      </div>
     </div>
   </nav>
   <article id="content" class="markdown-body"></article>

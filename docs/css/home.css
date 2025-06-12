@@ -1,6 +1,6 @@
 .avt {
     width: 100%;
-    height: calc(90dvh - 70px);
+    height: calc(100dvh - 60px);
     display: grid;
     place-content: center;
 }
@@ -8,7 +8,7 @@
 .avt img {
     display: block;
     margin: auto;
-    border-radius: 20%;
+    border-radius: 50%;
     border: 3px solid #0000005a;
     width: 240px;
     /* height: 200px; */
@@ -23,7 +23,7 @@
     }
 
     50% {
-        transform: translateY(-6px);
+        transform: translateY(-10px);
     }
 }
 

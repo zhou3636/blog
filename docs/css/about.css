@@ -1,6 +1,6 @@
 .container-a{
     width: 100%;
-    height: calc(90dvh - 70px);
+    height: calc(100dvh - 60px);
     display: grid;
     place-content: center;
 }
@@ -34,10 +34,10 @@
 .mbgif{
     margin: 0 auto;
     display: block;
-    width: 200px;
+    width: 240px;
     max-width: 50vw;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 50%;
     border: 3px solid rgba(0, 0, 0, 0.3);
 }
