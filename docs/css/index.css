@@ -32,9 +32,11 @@ body {
 .bg-1 {
   background-image: url('/image/bg.jpg');
 }
+
 .bg-2 {
   background: linear-gradient(135deg, #f5f7fa, #e4e7ec);
 }
+
 /* 导航样式 */
 .navbar {
   /* background-color: white; */
@@ -69,7 +71,6 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
 }
 
 
@@ -123,7 +124,9 @@ body {
   margin: auto;
   min-height: calc(100vh - var(--nav-height) - 80px);
   animation: fadeIn 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .page:nth-child(2),
 .page:nth-child(3) {
   animation: none;

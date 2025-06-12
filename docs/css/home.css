@@ -11,19 +11,19 @@
     border-radius: 50%;
     border: 3px solid #0000005a;
     width: 240px;
-    /* height: 200px; */
     animation: bounce 2s infinite ease-in-out;
+    cursor: pointer;
 }
 
 @keyframes bounce {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: scale(1);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: scale(1.03);
     }
 }
 

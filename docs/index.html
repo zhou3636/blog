@@ -33,7 +33,7 @@
         <!-- 第一页 -->
         <div id="home-page" class="page" style="display: none;">
             <div class="avt">
-                <img src="image/mb.jpg" alt="">
+                <img src="image/mb.jpg" alt="" data-src="image/mb.jpg" onclick="showImage(this)">
                 <div class="tt">
                     <div class="tt1">食不食油饼</div>
                     <div class="tt2">与其逼自己一把，不如放自己一马</div>
@@ -57,10 +57,6 @@
         <!-- 第三页 -->
         <div id="gallery-page" class="page" style="display: none;">
             <div class="container-2">
-                <dialog id="hdimg" onclick="hdimg.close()">
-                    <div class="loading" id="aa"></div>
-                    <img id="img-hd" alt="">
-                </dialog>
                 <div id="pts" class="photos"></div>
             </div>
         </div>
@@ -68,6 +64,10 @@
         <div id="about-page" class="page" style="display: none;">
         </div>
         <!-- 第五页... -->
+        <dialog id="hdimg" onclick="hdimg.close()">
+            <div class="loading" id="aa"></div>
+            <img id="img-hd" alt="">
+        </dialog>
     </div>
     <script src="js/hdimg.js"></script>
     <script>
