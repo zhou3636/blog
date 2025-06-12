@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,56 @@
   <base target="_blank">
   <script src="js/md.js"></script>
   <link rel="stylesheet" href="css/md.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <style>
-  .markdown-body {margin: 0 auto;}
+  .markdown-body {
+    margin: 0 auto;
+  }
+
+  .nav-links a.active {
+    color: initial;
+  }
+
+  .nav-links a.active::after {
+    width: 0;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .nav-links a:hover::after {
+    width: 95%;
+    background-color: var(--primary);
+    border-radius: 2px;
+  }
+  .rt-1 a{
+    margin: 0 10px;
+    display: block;
+    width: 60px;
+    color: #444;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
 </style>
+
 <body>
-  <h3 class="rt-1"><a href="javascript:history.back()" target="_self">返回首页</a></h3>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h3 class="rt-1"><a href="javascript:history.back()" target="_self">返回</a></h3>
+      <ul class="nav-links">
+        <li><a href="/#home" class="nav-link active" target="_self">主页</a></li>
+        <li><a href="/#docs" class="nav-link" target="_self">文档</a></li>
+        <li><a href="/#gallery" class="nav-link" target="_self">壁纸</a></li>
+        <li><a href="/#about" class="nav-link" target="_self">关于</a></li>
+      </ul>
+    </div>
+  </nav>
   <article id="content" class="markdown-body"></article>
   <script>
     const params = new URLSearchParams(location.search);
@@ -24,13 +69,13 @@
       }
       else if (fileExtension === 'md') {
         fetch('/md/' + encodeURIComponent(file))
-        .then(r => r.text())
-        .then(md => {
-          const lines = md.split('\n');
-          const body = lines.slice(5).join('\n');
-          const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
-          document.getElementById('content').innerHTML = marked.parse(bodyFixed);
-        });
+          .then(r => r.text())
+          .then(md => {
+            const lines = md.split('\n');
+            const body = lines.slice(5).join('\n');
+            const bodyFixed = body.replace(/!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g, '![$1](/md/$2)');
+            document.getElementById('content').innerHTML = marked.parse(bodyFixed);
+          });
       }
     }
   </script>
