@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/photo.css">
+    <link rel="stylesheet" href="css/star.css">
     <style></style>
 </head>
 
@@ -68,8 +69,10 @@
             <div class="loading" id="aa"></div>
             <img id="img-hd" alt="">
         </dialog>
+        <div class="stars-container" id="starsContainer"></div>
     </div>
     <script src="js/hdimg.js"></script>
+    <script src="js/star.js"></script>
     <script>
         // 路由管理类
         class HashRouter {
@@ -150,6 +153,7 @@
             const hash = window.location.hash;
             const navLinks = document.querySelectorAll('.nav-link');
             const navbar = document.querySelector('.navbar');
+            const start = document.getElementById('starsContainer')
             // 设置标题背景色
             navLinks.forEach(link => {
                 if (hash === '#docs' || hash === '#gallery') {
@@ -161,8 +165,10 @@
             // 设置标题栏背景色
             if (hash === '#docs' || hash === '#gallery') {
                 navbar.style.backgroundColor = '#fff';
+                start.style.display = 'none'
             } else {
                 navbar.style.backgroundColor = 'transparent';
+                start.style.display = 'block'
             }
         }
 

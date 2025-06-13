@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星星闪耀 - Starry Night</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            /* background: linear-gradient(180deg, #1a0f2e 0%, #2d1b69 30%, #4a148c 70%, #6a1b9a 100%); */
+            background-color: #000000;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            position: relative;
+        }
+
+        .stars-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 2s infinite;
+        }
+
+        .star.small {
+            width: 1px;
+            height: 1px;
+            animation-duration: 3s;
+        }
+
+        .star.medium {
+            width: 1.5px;
+            height: 1.5px;
+            animation-duration: 2.5s;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+        }
+
+        .star.large {
+            width: 2px;
+            height: 2px;
+            animation-duration: 2s;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        .star.giant {
+            width: 3px;
+            height: 3px;
+            animation-duration: 1.5s;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, white, transparent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: shoot 3s linear infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px) translateY(0px);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(100px) translateY(60px);
+            }
+        }
+
+        .constellation {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 30%;
+            left: 40%;
+            animation: rotate 60s linear infinite;
+        }
+
+        .constellation-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd700;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: glow 3s ease-in-out infinite alternate;
+            z-index: 10;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+                color: rgba(255, 255, 255, 0.9);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(135, 206, 250, 1), 0 0 40px rgba(135, 206, 250, 0.8);
+                color: rgba(135, 206, 250, 1);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="stars-container" id="starsContainer"></div>
+    <div class="constellation">
+        <div class="constellation-star" style="top: 0px; left: 0px;"></div>
+        <div class="constellation-star" style="top: 30px; left: 50px;"></div>
+        <div class="constellation-star" style="top: 80px; left: 20px;"></div>
+        <div class="constellation-star" style="top: 60px; left: 80px;"></div>
+        <div class="constellation-star" style="top: 100px; left: 60px;"></div>
+    </div>
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const sizes = ['small', 'medium', 'large', 'giant'];
+            const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+            star.classList.add(randomSize);
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            star.style.left = x + 'px';
+            star.style.top = y + 'px';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            
+            document.getElementById('starsContainer').appendChild(star);
+        }
+
+        function createShootingStar() {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            
+            const startY = Math.random() * (window.innerHeight * 0.3);
+            const startX = Math.random() * window.innerWidth * 0.3;
+            
+            shootingStar.style.left = startX + 'px';
+            shootingStar.style.top = startY + 'px';
+            shootingStar.style.animationDelay = Math.random() * 5 + 's';
+            
+            document.getElementById('starsContainer').appendChild(shootingStar);
+            
+            setTimeout(() => {
+                if (shootingStar.parentNode) {
+                    shootingStar.parentNode.removeChild(shootingStar);
+                }
+            }, 8000);
+        }
+
+        // 创建初始星星
+        for (let i = 0; i < 200; i++) {
+            createStar();
+        }
+
+        // 定期创建流星
+        setInterval(createShootingStar, 3000);
+
+        // 动态添加新星星
+        setInterval(() => {
+            if (document.querySelectorAll('.star').length < 250) {
+                createStar();
+            }
+        }, 2000);
+
+        // 鼠标交互效果
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() < 0.1) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'star medium';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.animationDuration = '0.8s';
+                sparkle.style.pointerEvents = 'none';
+                
+                document.getElementById('starsContainer').appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 1000);
+            }
+        });
+
+        // 点击创建爆炸效果
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 8; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'star large';
+                sparkle.style.left = (e.clientX + (Math.random() - 0.5) * 100) + 'px';
+                sparkle.style.top = (e.clientY + (Math.random() - 0.5) * 100) + 'px';
+                sparkle.style.animationDuration = '1s';
+                sparkle.style.pointerEvents = 'none';
+                
+                document.getElementById('starsContainer').appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 1200);
+            }
+        });
+    </script>
+</body>
+</html>
