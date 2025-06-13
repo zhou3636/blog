@@ -82,5 +82,29 @@
         transform: translateX(100px) translateY(60px);
     }
 }
+@media (max-width: 500px) {
+    .star.small {
+        width: 0.5px;
+        height: 0.5px;
+    }
+
+    .star.medium {
+        width: 0.75px;
+        height: 0.75px;
+        box-shadow: 0 0 1.5px rgba(255, 255, 255, 0.6);
+    }
+
+    .star.large {
+        width: 1px;
+        height: 1px;
+        box-shadow: 0 0 2.5px rgba(255, 255, 255, 0.7);
+    }
+
+    .star.giant {
+        width: 1.5px;
+        height: 1.5px;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    }
+}
 
 
