@@ -58,8 +58,8 @@
 
 .shooting-star {
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
     background: linear-gradient(45deg, white, transparent);
     border-radius: 50%;
     opacity: 0;
