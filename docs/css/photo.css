@@ -15,17 +15,18 @@
 .photo-card {
     background-color: transparent;
     overflow: hidden;
+    border-radius: 8px;
     transition: transform 0.2s ease;
     cursor: pointer;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 .photo-card:hover {
-    transform: translateY(-1px);
+    transform:scale(1.02);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .photo {
-    /* position: relative; */
     width: 100%;
     aspect-ratio: 5 / 3;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

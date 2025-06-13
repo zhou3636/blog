@@ -1,37 +1,56 @@
-.container-a{
+.container-a {
     width: 100%;
     height: calc(100dvh - 70px);
     display: grid;
     place-content: center;
 }
+
+.links-ab {
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: 10px;
+}
+
+.link-ab {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+}
+
+.link-ab img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.link-ab p {
+    text-shadow: 0 0 2px #333;
+}
+
 .thanks {
     display: block;
     line-height: 2;
     text-align: center;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
 }
-.thanks p {
-    border-radius: 30px;
-    padding: 3px 15px;
-    transition: background-color 0.3s;
-    color: azure;
-    text-shadow: 0 0 3px #000;
-}
+
+
 .thanks a {
-    border-radius: 30px;
+    font-size: 15px;
+    border-radius: 8px;
     padding: 3px 10px;
     transition: background-color 0.3s;
     color: azure;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    text-shadow: 0 0 2px #333;
 }
 
 .thanks a:hover {
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
+    text-shadow: none;
 }
-.mbgif{
+
+.mbgif {
     margin: 0 auto;
     display: block;
     width: 240px;
@@ -40,4 +59,10 @@
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 500px) {
+    .link-ab {
+        justify-content: center;
+    }
 }

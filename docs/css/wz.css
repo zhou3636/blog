@@ -24,19 +24,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 30px;
-    margin-top: 8px;
+    margin-top: 10px;
 
 }
 
 /* 搜索和标签 */
-.tags {
-    border-radius: 20px;
-    padding: 5px;
-    padding-bottom: 12px;
+.tag-search {
     background-color: rgba(255, 255, 255, 0.6);
-    /* border: 1px solid rgba(63, 63, 63, 0.1); */
-    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    padding: 5px;
     margin-bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .search-box {
@@ -71,9 +69,7 @@
 .tags-container {
     display: flex;
     flex-wrap: wrap;
-    /* margin-bottom: 10px; */
     padding: 0 5px;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .tag {
@@ -82,7 +78,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 3px;
+    margin: 3px 0;
+    margin-right: 6px;
     font-size: 13px;
     border: 1px solid rgba(63, 63, 63, 0.1);
 }
@@ -94,24 +91,22 @@
 /* 文章卡片 */
 .article-card {
     background-color: rgba(255, 255, 255, 0.6);
-    /* border: 1px solid #eee; */
     border-radius: 8px;
     padding: 8px;
     padding-left: 20px;
-    /* margin-bottom: 10px; */
     transition: transform 0.2s;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: stretch;
     min-width: 420px;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 .article-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform:scale(1.01);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .incard {
@@ -136,34 +131,28 @@
 }
 
 .article-title {
+    color: #111;
     width: fit-content;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     margin-top: 5px;
     margin-bottom: 6px;
     padding-bottom: 2px;
-    background: linear-gradient(to right, #ad27a2, #6bcf13) no-repeat;
-    background-size: 0 2px;
-    background-position: center bottom;
-    transition: background-size 0.2s;
-}
-
-.article-card:hover .article-title {
-    background-size: 100% 2px;
-    background-position: center bottom;
 }
 
 .article-description {
-    color: #272727;
-    margin-bottom: 8px;
-    line-height: 1.5;
-    /* margin-left: 8px; */
+    color: #444;
+    margin-bottom: 1px;
+}
+
+.date-wz {
+    font-size: 15px;
+    color: #999;
 }
 
 .article-tags {
     display: flex;
     gap: 5px;
-    /* margin-left: 15px; */
 }
 
 .article-tag {
@@ -183,8 +172,8 @@
 
     #left-column {
         width: 100%;
-        display: block;
-        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
 
     }
 
@@ -197,47 +186,29 @@
         margin-top: 8px;
         padding: 5px;
         padding-top: 0;
-        /* background-color: rgba(255, 255, 255, 0.5); */
     }
 
     .tag-search {
-        border-radius: 8px;
-        padding: 5px;
-        padding-bottom: 0;
-        background-color: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(3px);
         margin-bottom: 8px;
     }
 
 
 
     .tags-container {
-        width: 100%;
-        display: block;
-        padding: 5px 0;
-        /* white-space: nowrap; */
-        scrollbar-width: none;
-        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        padding: 0
     }
 
     .tag {
-        display: inline-block;
-        vertical-align: middle;
-        padding: 0 10px;
-        border-radius: 15px;
-        cursor: pointer;
-        margin: 2px;
-        font-size: 13px;
+        padding: 2px 10px;
+        padding-bottom: 0;
     }
 
     .search-box {
-        display: block;
         margin: 5px 0;
     }
 
     #searchInput {
-        display: block;
-        width: 100%;
         max-width: 100%;
         height: 35px;
         padding: 6px 0;
@@ -247,92 +218,33 @@
         background-size: 26px;
     }
 
-    #searchInput:focus {
-        background-color: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.8);
-    }
-
-    .article-list {
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        z-index: 100;
-    }
-
-    .card {
-        display: none;
-    }
-
     .article-card {
         min-width: 0;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 1px solid rgba(145, 145, 145, 0.5);
-        border-radius: 8px;
         padding: 8px 12px;
-        margin-bottom: 8px;
-        transition: transform 0.2s;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .article-card:hover {
-        border: 1px solid rgba(0, 0, 0, 0.7);
-        transition: border 0.2s;
     }
 
     .article-title {
         font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px;
     }
 
-    .article-description {
-        color: #272727;
-        margin-bottom: 0;
-        line-height: 1.5;
-    }
 
     .article-tags {
-        display: flex;
         gap: 3px;
         max-width: 90vw;
-        overflow: hidden;
     }
 
     .article-tag {
-        background-color: rgba(232, 244, 255, 0.8);
         padding: 2px 6px;
-        border-radius: 12px;
         font-size: 12px;
     }
 
     .date-wz {
         font-size: 14px;
-        color: #999;
     }
 
     .imgbox {
         max-height: 150px;
         width: 120px;
         border-radius: 5px;
-        overflow: hidden;
-        object-fit: cover;
-        display: block;
     }
-
-
-    /* 其它信息 */
-    .article-card,
-    .tag {
-        background-color: rgba(255, 255, 255, 0.6);
-        border: 1px solid rgba(145, 145, 145, 0.3);
-
-    }
-
-
-
-
 }
