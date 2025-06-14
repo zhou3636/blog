@@ -10,7 +10,7 @@
     height: 240px;
     margin: auto;
     border-radius: 50%;
-    /* animation: bounce 2s infinite ease-in-out; */
+    animation: bounce 2s infinite ease-in-out;
     /* animation: mbmbzqq 15s linear infinite; */
     cursor: pointer;
     position: relative;
@@ -66,7 +66,7 @@
 
 .tt1 {
     font-weight: 500;
-    font-size: 35px;
+    font-size: 30px;
     padding-bottom: 10px;
     text-align: center;
     text-shadow: 0 0 3px #000;

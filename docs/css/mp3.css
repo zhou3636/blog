@@ -31,6 +31,7 @@
     line-height: 15px;
     background: none;
     overflow: hidden;
+    box-shadow: 0 0 6px #00000093;
 }
 
 .btn-m:nth-child(2) {

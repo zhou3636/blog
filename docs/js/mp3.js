@@ -7,7 +7,7 @@ class MiniPlayer {
         this.audio = document.getElementById('audio');
         this.songText = document.getElementById('songText');
         this.playBtn = document.getElementById('playBtn');
-        this.mbmboxElement = document.getElementById('mbmbox'); // 添加mbmb元素引用
+        this.mbmboxElement = document.getElementById('mbmbox');
         this.mbmbElement = document.getElementById('mbmb');
         this.initEvents();
         this.loadPlaylist();
