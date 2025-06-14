@@ -7,8 +7,8 @@ class MiniPlayer {
         this.audio = document.getElementById('audio');
         this.songText = document.getElementById('songText');
         this.playBtn = document.getElementById('playBtn');
-        this.mbmbElement = document.getElementById('mbmb'); // 添加mbmb元素引用
-        
+        this.mbmboxElement = document.getElementById('mbmbox'); // 添加mbmb元素引用
+        this.mbmbElement = document.getElementById('mbmb');
         this.initEvents();
         this.loadPlaylist();
     }
@@ -47,18 +47,19 @@ class MiniPlayer {
         this.audio.onpause = () => {
             this.playBtn.innerHTML = `<img src="image/bf.png" alt="">`;
             this.isPlaying = false;
-            this.mbmbElement.style.animationPlayState = 'paused'; // 更新mbmb动画状态
+            this.mbmboxElement.style.animationPlayState = 'paused'; // 更新mbmb动画状态
         };
         
         this.audio.onplay = () => {
             this.playBtn.innerHTML = `<img src="image/zt.png" alt="">`;
             this.isPlaying = true;
-            this.mbmbElement.style.animation = 'mbmbzqq 20s linear infinite'; // 更新mbmb动画状态
+            this.mbmboxElement.style.animation = 'mbmbzqq 20s linear infinite'; // 更新mbmb动画状态
+            this.mbmbElement.style.transform = 'scale(0.7)';
         };
         
         // 添加加载中状态处理
         this.audio.onloadstart = () => {
-            this.updateDisplay('加载中...');
+            this.updateDisplay('Music...');
         };
         
         // 添加等待数据状态处理
@@ -109,7 +110,7 @@ class MiniPlayer {
         const song = this.playlist[index];
         
         // 设置音频源
-        this.audio.src = 'https://mp3.855655.xyz/' + song.name;
+        this.audio.src = 'https://d2p9jl7ea6zcas.cloudfront.net/' + song.name;
         
         // 更新显示
         this.updateDisplay(song.name.replace('.mp3', ''));

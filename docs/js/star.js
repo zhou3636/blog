@@ -1,4 +1,8 @@
 function createStar() {
+    const hash3 = window.location.hash;
+    if (hash3 === '#docs' || hash3 === '#gallery') return;
+    // 如果符合停止条件，直接退出函数
+
     const star = document.createElement('div');
     star.className = 'star';
     
@@ -17,6 +21,10 @@ function createStar() {
 }
 
 function createShootingStar() {
+    const hash3 = window.location.hash;
+    if (hash3 === '#docs' || hash3 === '#gallery') return;
+    // 如果符合停止条件，直接退出函数
+
     const shootingStar = document.createElement('div');
     shootingStar.className = 'shooting-star';
     

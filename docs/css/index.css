@@ -122,8 +122,8 @@ body {
 .page {
   max-width: 1200px;
   margin: auto;
-  min-height: calc(100vh - var(--nav-height) - 80px);
-  animation: fadeIn 0.3s ease;
+  min-height: calc(100vh - var(--nav-height) - 60px);
+  /* animation: fadeIn 0.3s ease; */
   -webkit-tap-highlight-color: transparent;
 }
 

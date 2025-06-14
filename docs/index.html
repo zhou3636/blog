@@ -35,7 +35,10 @@
         <!-- 第一页 -->
         <div id="home-page" class="page" style="display: none;">
             <div class="avt">
-                <img src="image/mb.jpg" alt="" data-src="image/mb.jpg" onclick="showImage(this)" id="mbmb">
+                <div id="mbmbox">
+                    <img src="image/mb.jpg" alt="" data-src="image/mb.jpg" onclick="showImage(this)" id="mbmb">
+                    <img src="image/cpbk.jpg" alt="" class="cpbk-h">
+                </div>
                 <div class="player" id="mp3play">
                     <div class="controls-m">
                         <button class="btn-m" id="prevBtn">
@@ -43,13 +46,14 @@
                         </button>
                         <button class="btn-m" id="playBtn">
                             <img src="image/bf.png" alt="">
+                            <img src="image/zt.png" alt="" style="display: none;">
                         </button>
                         <button class="btn-m" id="nextBtn">
                             <img src="image/xyq.png" alt="">
                         </button>
                     </div>
                     <div class="song-display">
-                        <div class="song-text" id="songText">正在加载...</div>
+                        <div class="song-text" id="songText">Music...</div>
                     </div>
                 </div>
                 <div class="tt">
