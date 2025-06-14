@@ -140,7 +140,7 @@ class MiniPlayer {
         this.isPlaying = true;
         
         // 设置音频源
-        this.audio.src = 'https://mp3.855655.xyz/' + song.name;
+        this.audio.src = 'https://d2p9jl7ea6zcas.cloudfront.net/' + song.name;
         
         // 更新显示
         this.updateDisplay(song.name.replace('.mp3', ''));
