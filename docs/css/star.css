@@ -11,7 +11,7 @@
 
 .star {
     position: absolute;
-    background: rgb(193, 165, 255);
+    background: #e6dbff;
     border-radius: 50%;
     opacity: 0;
     animation: twinkle 2s infinite; 
@@ -32,6 +32,7 @@
 }
 
 .star.large {
+    color: #fff;
     width: 2px;
     height: 2px;
     animation-duration: 2s;
@@ -39,6 +40,7 @@
 }
 
 .star.giant {
+    background: #e2d6ff;
     width: 3px;
     height: 3px;
     animation-duration: 1.5s;
@@ -63,13 +65,13 @@
     background: linear-gradient(45deg, white, transparent);
     border-radius: 50%;
     opacity: 0;
-    animation: shoot 3s linear infinite;
+    animation: shoot 15s linear infinite;
 }
 
 @keyframes shoot {
     0% {
         opacity: 0;
-        transform: translateX(-100px) translateY(0px);
+        transform: translateX(10vw) translateY(25vh);
     }
     10% {
         opacity: 1;
@@ -79,7 +81,7 @@
     }
     100% {
         opacity: 0;
-        transform: translateX(100px) translateY(60px);
+        transform: translateX(100vw) translateY(50vh);
     }
 }
 @media (max-width: 500px) {
@@ -101,8 +103,8 @@
     }
 
     .star.giant {
-        width: 1.5px;
-        height: 1.5px;
+        width: 1.2px;
+        height: 1.2px;
         box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
     }
 }

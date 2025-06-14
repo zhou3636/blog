@@ -42,7 +42,7 @@ for (let i = 0; i < 200; i++) {
 }
 
 // 定期创建流星
-setInterval(createShootingStar, 3000);
+setInterval(createShootingStar, 5000);
 
 // 动态添加新星星
 setInterval(() => {
@@ -52,41 +52,41 @@ setInterval(() => {
 }, 2000);
 
 // 鼠标交互效果
-document.addEventListener('mousemove', (e) => {
-    if (Math.random() < 0.1) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'star medium';
-        sparkle.style.left = e.clientX + 'px';
-        sparkle.style.top = e.clientY + 'px';
-        sparkle.style.animationDuration = '0.8s';
-        sparkle.style.pointerEvents = 'none';
+// document.addEventListener('mousemove', (e) => {
+//     if (Math.random() < 0.1) {
+//         const sparkle = document.createElement('div');
+//         sparkle.className = 'star medium';
+//         sparkle.style.left = e.clientX + 'px';
+//         sparkle.style.top = e.clientY + 'px';
+//         sparkle.style.animationDuration = '0.8s';
+//         sparkle.style.pointerEvents = 'none';
         
-        document.getElementById('starsContainer').appendChild(sparkle);
+//         document.getElementById('starsContainer').appendChild(sparkle);
         
-        setTimeout(() => {
-            if (sparkle.parentNode) {
-                sparkle.parentNode.removeChild(sparkle);
-            }
-        }, 1000);
-    }
-});
+//         setTimeout(() => {
+//             if (sparkle.parentNode) {
+//                 sparkle.parentNode.removeChild(sparkle);
+//             }
+//         }, 1000);
+//     }
+// });
 
 // 点击创建爆炸效果
-document.addEventListener('click', (e) => {
-    for (let i = 0; i < 8; i++) {
-        const sparkle = document.createElement('div');
-        sparkle.className = 'star large';
-        sparkle.style.left = (e.clientX + (Math.random() - 0.5) * 100) + 'px';
-        sparkle.style.top = (e.clientY + (Math.random() - 0.5) * 100) + 'px';
-        sparkle.style.animationDuration = '1s';
-        sparkle.style.pointerEvents = 'none';
+// document.addEventListener('click', (e) => {
+//     for (let i = 0; i < 8; i++) {
+//         const sparkle = document.createElement('div');
+//         sparkle.className = 'star large';
+//         sparkle.style.left = (e.clientX + (Math.random() - 0.5) * 100) + 'px';
+//         sparkle.style.top = (e.clientY + (Math.random() - 0.5) * 100) + 'px';
+//         sparkle.style.animationDuration = '1s';
+//         sparkle.style.pointerEvents = 'none';
         
-        document.getElementById('starsContainer').appendChild(sparkle);
+//         document.getElementById('starsContainer').appendChild(sparkle);
         
-        setTimeout(() => {
-            if (sparkle.parentNode) {
-                sparkle.parentNode.removeChild(sparkle);
-            }
-        }, 1200);
-    }
-});
+//         setTimeout(() => {
+//             if (sparkle.parentNode) {
+//                 sparkle.parentNode.removeChild(sparkle);
+//             }
+//         }, 1200);
+//     }
+// });

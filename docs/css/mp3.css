@@ -1,0 +1,87 @@
+.player {
+    width: 100px;
+    /* height: 40px; */
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* position: absolute;
+    left: 50vw;
+    top: 80px;
+    transform: translateX(-50%) */
+    margin: 8px auto;
+    
+}
+
+.controls-m {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    gap: 3px;
+}
+
+.btn-m {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: all 0.2s;
+    line-height: 15px;
+    background: none;
+    overflow: hidden;
+}
+.btn-m:nth-child(2){
+    width: 28px;
+    height: 28px;
+}
+.btn-m img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.15);
+    
+}
+.btn-m:hover {
+    background: rgb(2, 101, 182);
+}
+
+.song-display {
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.song-text {
+    color: white;
+    text-shadow:  0 0 2px #000;
+    font-size: 11px;
+    white-space: nowrap;
+    position: absolute;
+    animation: scroll 12s linear infinite;
+    padding: 0 8px;
+    transform: translateX(100px);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.loading {
+    color: #ccc;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+}

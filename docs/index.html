@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/photo.css">
     <link rel="stylesheet" href="css/star.css">
+    <link rel="stylesheet" href="css/mp3.css">
     <style></style>
 </head>
 
@@ -34,7 +35,23 @@
         <!-- 第一页 -->
         <div id="home-page" class="page" style="display: none;">
             <div class="avt">
-                <img src="image/mb.jpg" alt="" data-src="image/mb.jpg" onclick="showImage(this)">
+                <img src="image/mb.jpg" alt="" data-src="image/mb.jpg" onclick="showImage(this)" id="mbmb">
+                <div class="player" id="mp3play">
+                    <div class="controls-m">
+                        <button class="btn-m" id="prevBtn">
+                            <img src="image/syq.png" alt="">
+                        </button>
+                        <button class="btn-m" id="playBtn">
+                            <img src="image/bf.png" alt="">
+                        </button>
+                        <button class="btn-m" id="nextBtn">
+                            <img src="image/xyq.png" alt="">
+                        </button>
+                    </div>
+                    <div class="song-display">
+                        <div class="song-text" id="songText">正在加载...</div>
+                    </div>
+                </div>
                 <div class="tt">
                     <div class="tt1">食不食油饼</div>
                     <div class="tt2">与其逼自己一把，不如放自己一马</div>
@@ -65,14 +82,17 @@
         <div id="about-page" class="page" style="display: none;">
         </div>
         <!-- 第五页... -->
-        <dialog id="hdimg" onclick="hdimg.close()">
-            <div class="loading" id="aa"></div>
-            <img id="img-hd" alt="">
-        </dialog>
-        <div class="stars-container" id="starsContainer"></div>
     </div>
+    <dialog id="hdimg" onclick="hdimg.close()">
+        <div class="loading" id="aa"></div>
+        <img id="img-hd" alt="">
+    </dialog>
+    <div class="stars-container" id="starsContainer"></div>
+
+    <audio id="audio" preload="metadata"></audio>
     <script src="js/hdimg.js"></script>
     <script src="js/star.js"></script>
+    <script src="js/mp3.js"></script>
     <script>
         // 路由管理类
         class HashRouter {
@@ -178,6 +198,7 @@
         let galleryLoaded = false;
         let docsLoaded = false;
         let aboutLoaded = false;
+        // let mp3palyLoaded = false;
         window.addEventListener('load', loadGalleryImages)
         window.addEventListener('hashchange', loadGalleryImages);
         function loadGalleryImages() {
@@ -203,7 +224,10 @@
                     })
             }
         }
-
+        // const script = document.createElement('script');
+        // script.src = 'js/mp3.js';
+        // document.head.appendChild(script);
+        // mp3palyLoaded = true;
     </script>
 </body>
 

@@ -33,7 +33,7 @@ function renderArticles() {
     }
 
     container.innerHTML = filtered.map(article => `
-    <a href="view.html?file=${encodeURIComponent(article.file)}" class="article-card">
+    <a href="view.html?file=${encodeURIComponent(article.file)}" target="_blank" class="article-card">
         <div class="incard">   
             <div class="article-title">${article.title}</div>
             <div class="article-description">${article.description}</div>
@@ -77,19 +77,3 @@ document.getElementById('tagsContainer').addEventListener('click', (e) => {
 
 // 初始化
 list();
-// 处理搜索事件
-// appContainer.addEventListener('input', (e) => {
-//     if (e.target.id === 'searchInput') {
-//         currentSearch = e.target.value;
-//         renderArticles();
-//     }
-// });
-// appContainer.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('tag')) {
-//         currentTag = e.target.dataset.tag;
-//         document.querySelectorAll('#tagsContainer .tag').forEach(tag => {
-//             tag.style.backgroundColor = tag === e.target ? '#d1e9ff' : '#e8f4ffcc';
-//         });
-//         renderArticles();
-//     }
-// });

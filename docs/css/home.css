@@ -5,15 +5,17 @@
     place-content: center;
 }
 
-.avt img {
+#mbmb {
     display: block;
     margin: auto;
     border-radius: 50%;
     border: 3px solid #0000005a;
     width: 240px;
     animation: bounce 2s infinite ease-in-out;
+    /* animation: mbmbzqq 15s linear infinite; */
     cursor: pointer;
 }
+
 
 @keyframes bounce {
 
@@ -23,13 +25,22 @@
     }
 
     50% {
-        transform: scale(1.03);
+        transform: scale(0.97);
+    }
+}
+
+@keyframes mbmbzqq {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
 .tt {
     color: #ffffff;
-    padding: 30px;
+    /* padding: 30px; */
     padding-bottom: 40px;
 }
 
@@ -61,7 +72,7 @@
 
     }
 
-    .avt img {
+    #mbmb {
         margin: auto;
         display: block;
         width: 200px;
@@ -70,7 +81,7 @@
 
     .tt {
         color: #ffffff;
-        padding: 30px;
+        /* padding: 30px; */
         padding-bottom: 40px;
     }
 
